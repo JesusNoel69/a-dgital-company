@@ -1,0 +1,2 @@
+2026-06-17 17:23:05.992 -06:00 [WRN] Failed to determine the https port for redirect.
+2026-06-17 17:23:06.261 -06:00 [INF] HTTP GET / responded 404 in 276.5970 ms
