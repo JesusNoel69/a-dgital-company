@@ -1,10 +1,10 @@
 using AutoMapper;
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Application.Models.WorkItem;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Application.Models.WorkItem;
 using MediatR;
 
-namespace a_digital_company.Application.Features.WorkItems.Queries.GetPendingWorkItems
+namespace a-digital-company.Application.Features.WorkItems.Queries.GetPendingWorkItems
 {
     public class GetPendingWorkItemsQueryHandler(IWorkItemRepository workItemRepository, IMapper mapper, IUserService userService) : IRequestHandler<GetPendingWorkItemsQuery, List<WorkItemDto>>
     {

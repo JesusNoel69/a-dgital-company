@@ -1,7 +1,7 @@
-using a_digital_company.Application.Models.WorkItem;
+using a-digital-company.Application.Models.WorkItem;
 using MediatR;
 
-namespace a_digital_company.Application.Features.WorkItems.Queries.GetOverdueWorkItems
+namespace a-digital-company.Application.Features.WorkItems.Queries.GetOverdueWorkItems
 {
     public record GetOverdueWorkItemsQuery() : IRequest<List<WorkItemDto>>;
 }

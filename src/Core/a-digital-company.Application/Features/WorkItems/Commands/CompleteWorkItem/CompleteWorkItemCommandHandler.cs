@@ -1,10 +1,10 @@
-using a_digital_company.Application.Exceptions;
-using a_digital_company.Application.Interfaces.Logging;
-using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Domain;
+using a-digital-company.Application.Exceptions;
+using a-digital-company.Application.Interfaces.Logging;
+using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Domain;
 using MediatR;
 
-namespace a_digital_company.Application.Features.WorkItems.Commands.CompleteWorkItem
+namespace a-digital-company.Application.Features.WorkItems.Commands.CompleteWorkItem
 {
     public class CompleteWorkItemCommandHandler(IWorkItemRepository workItemRepository, IAppLogger<CompleteWorkItemCommandHandler> logger)
         : IRequestHandler<CompleteWorkItemCommand, Unit>

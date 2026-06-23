@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\a_digital_company.Application\a_digital_company.Application.csproj" />
+    <ProjectReference Include="..\..\Core\a-digital-company.Application\a-digital-company.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

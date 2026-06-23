@@ -1,8 +1,8 @@
-using a_digital_company.Application.Models.WorkItem;
-using a_digital_company.Domain.Enums;
+using a-digital-company.Application.Models.WorkItem;
+using a-digital-company.Domain.Enums;
 using MediatR;
 
-namespace a_digital_company.Application.Features.WorkItems.Commands.UpdateWorkItem
+namespace a-digital-company.Application.Features.WorkItems.Commands.UpdateWorkItem
 {
     public class UpdateWorkItemCommand: IRequest<WorkItemDto>
     {

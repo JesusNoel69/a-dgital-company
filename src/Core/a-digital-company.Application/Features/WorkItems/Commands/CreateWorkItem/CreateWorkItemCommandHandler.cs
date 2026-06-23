@@ -1,12 +1,12 @@
 using AutoMapper;
-using a_digital_company.Application.Exceptions;
-using a_digital_company.Application.Interfaces.Logging;
-using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Application.Models.WorkItem;
-using a_digital_company.Domain;
+using a-digital-company.Application.Exceptions;
+using a-digital-company.Application.Interfaces.Logging;
+using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Application.Models.WorkItem;
+using a-digital-company.Domain;
 using MediatR;
 
-namespace a_digital_company.Application.Features.WorkItems.Commands.CreateWorkItem
+namespace a-digital-company.Application.Features.WorkItems.Commands.CreateWorkItem
 {
     public class CreateWorkItemCommandHandler(IMapper mapper, IWorkItemRepository workItemRepository, IAppLogger<CreateWorkItemCommandHandler> logger)
         : IRequestHandler<CreateWorkItemCommand, WorkItemDto>

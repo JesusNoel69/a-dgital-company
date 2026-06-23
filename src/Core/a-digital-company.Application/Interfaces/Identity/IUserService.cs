@@ -1,5 +1,5 @@
-using a_digital_company.Application.Models.Identity;
-namespace a_digital_company.Application.Interfaces.Identity
+using a-digital-company.Application.Models.Identity;
+namespace a-digital-company.Application.Interfaces.Identity
 {
     public interface IUserService
     {

@@ -1,6 +1,6 @@
 using FluentValidation.Results;
 
-namespace a_digital_company.Application.Exceptions
+namespace a-digital-company.Application.Exceptions
 {
     public class BadRequestException : Exception
     {

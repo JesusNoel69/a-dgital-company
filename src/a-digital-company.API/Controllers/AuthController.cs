@@ -1,17 +1,17 @@
 using System.Security.Claims;
-using a_digital_company.Application.Features.Auth.Commands.LoginUser;
-using a_digital_company.Application.Features.Auth.Commands.RefreshToken;
-using a_digital_company.Application.Features.Auth.Commands.RegisterUser;
-using a_digital_company.Application.Features.Auth.Commands.RevokeToken;
-using a_digital_company.Application.Features.Auth.Queries.GetCurrentUser;
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Application.Models.Identity;
-using a_digital_company.Identity.Models;
+using a-digital-company.Application.Features.Auth.Commands.LoginUser;
+using a-digital-company.Application.Features.Auth.Commands.RefreshToken;
+using a-digital-company.Application.Features.Auth.Commands.RegisterUser;
+using a-digital-company.Application.Features.Auth.Commands.RevokeToken;
+using a-digital-company.Application.Features.Auth.Queries.GetCurrentUser;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Application.Models.Identity;
+using a-digital-company.Identity.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace a_digital_company.API.Controllers
+namespace a-digital-company.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

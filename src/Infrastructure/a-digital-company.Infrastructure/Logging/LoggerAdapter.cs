@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Logging;
-using a_digital_company.Application.Interfaces.Logging;
+using a-digital-company.Application.Interfaces.Logging;
 
-namespace a_digital_company.Infrastructure.Logging
+namespace a-digital-company.Infrastructure.Logging
 {
     public class LoggerAdapter<T>(ILoggerFactory loggerFactory) : IAppLogger<T>
     {

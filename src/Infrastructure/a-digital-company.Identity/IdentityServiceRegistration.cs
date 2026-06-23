@@ -1,8 +1,8 @@
-﻿using a_digital_company.Identity.Context;
-using a_digital_company.Identity.Models;
-using a_digital_company.Identity.Services;
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Application.Models.Identity;
+﻿using a-digital-company.Identity.Context;
+using a-digital-company.Identity.Models;
+using a-digital-company.Identity.Services;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Application.Models.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -11,8 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Caching.Memory;
-using a_digital_company.Identity.Configurations;
-namespace a_digital_company.Identity
+using a-digital-company.Identity.Configurations;
+namespace a-digital-company.Identity
 {
     public static class IdentityServiceRegistration
     {
@@ -23,7 +23,7 @@ namespace a_digital_company.Identity
             if (useInMemoryDatabase)
             {
                 services.AddDbContext<IdentityDbContext>(options =>
-                    options.UseInMemoryDatabase("a_digital_companyDB"));
+                    options.UseInMemoryDatabase("a-digital-companyDB"));
                 var roles = new RoleConfiguration();
             }
             else

@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace a_digital_company.Application.Features.WorkItems.Commands.ChangePriority
+namespace a-digital-company.Application.Features.WorkItems.Commands.ChangePriority
 {
     public class ChangePriorityCommandValidator : AbstractValidator<ChangePriorityCommand>
     {

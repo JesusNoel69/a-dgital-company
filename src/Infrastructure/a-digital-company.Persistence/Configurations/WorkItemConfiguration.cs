@@ -1,9 +1,9 @@
-using a_digital_company.Domain;
-using a_digital_company.Domain.Enums;
+using a-digital-company.Domain;
+using a-digital-company.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace a_digital_company.Persistence.Configurations
+namespace a-digital-company.Persistence.Configurations
 {
     public class WorkItemConfiguration : IEntityTypeConfiguration<WorkItem>
     {

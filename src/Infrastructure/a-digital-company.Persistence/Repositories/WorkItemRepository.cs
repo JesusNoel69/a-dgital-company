@@ -1,10 +1,10 @@
-using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Domain;
-using a_digital_company.Domain.Enums;
-using a_digital_company.Persistence.Context;
+using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Domain;
+using a-digital-company.Domain.Enums;
+using a-digital-company.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace a_digital_company.Persistence.Repositories
+namespace a-digital-company.Persistence.Repositories
 {
     public class WorkItemRepository(ApplicationDbContext context) : GenericRepository<WorkItem>(context), IWorkItemRepository
     {

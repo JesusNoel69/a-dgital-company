@@ -1,18 +1,18 @@
-using a_digital_company.Application.Features.WorkItems.Commands.ChangePriority;
-using a_digital_company.Application.Features.WorkItems.Commands.CompleteWorkItem;
-using a_digital_company.Application.Features.WorkItems.Commands.CreateWorkItem;
-using a_digital_company.Application.Features.WorkItems.Commands.DeleteWorkItem;
-using a_digital_company.Application.Features.WorkItems.Commands.UpdateWorkItem;
-using a_digital_company.Application.Features.WorkItems.Queries.GetMyWorkItems;
-using a_digital_company.Application.Features.WorkItems.Queries.GetOverdueWorkItems;
-using a_digital_company.Application.Features.WorkItems.Queries.GetPendingWorkItems;
-using a_digital_company.Application.Features.WorkItems.Queries.GetWorkItemById;
-using a_digital_company.Application.Models.WorkItem;
+using a-digital-company.Application.Features.WorkItems.Commands.ChangePriority;
+using a-digital-company.Application.Features.WorkItems.Commands.CompleteWorkItem;
+using a-digital-company.Application.Features.WorkItems.Commands.CreateWorkItem;
+using a-digital-company.Application.Features.WorkItems.Commands.DeleteWorkItem;
+using a-digital-company.Application.Features.WorkItems.Commands.UpdateWorkItem;
+using a-digital-company.Application.Features.WorkItems.Queries.GetMyWorkItems;
+using a-digital-company.Application.Features.WorkItems.Queries.GetOverdueWorkItems;
+using a-digital-company.Application.Features.WorkItems.Queries.GetPendingWorkItems;
+using a-digital-company.Application.Features.WorkItems.Queries.GetWorkItemById;
+using a-digital-company.Application.Models.WorkItem;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace a_digital_company.API.Controllers
+namespace a-digital-company.API.Controllers
 {
     [ApiController]
     [Authorize]

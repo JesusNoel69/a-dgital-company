@@ -368,6 +368,16 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "a-digital-company.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/a-digital-company.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/a-digital-company.Domain.dll": {}
+        }
       }
     }
   },
@@ -995,6 +1005,11 @@
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "a-digital-company.Domain/1.0.0": {
+      "type": "project",
+      "path": "../a-digital-company.Domain/a-digital-company.Domain.csproj",
+      "msbuildProject": "../a-digital-company.Domain/a-digital-company.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1008,7 +1023,8 @@
       "Microsoft.Extensions.DependencyInjection >= 8.0.1",
       "Microsoft.Extensions.Diagnostics >= 8.0.1",
       "Microsoft.Extensions.Http >= 8.0.1",
-      "Microsoft.Extensions.Options.ConfigurationExtensions >= 9.0.0"
+      "Microsoft.Extensions.Options.ConfigurationExtensions >= 9.0.0",
+      "a-digital-company.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1037,7 +1053,11 @@
         "net8.0": {
           "framework": "net8.0",
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\hp\\Documents\\Proyectos\\a-digital-company\\src\\Core\\a-digital-company.Domain\\a-digital-company.Domain.csproj": {
+              "projectPath": "C:\\Users\\hp\\Documents\\Proyectos\\a-digital-company\\src\\Core\\a-digital-company.Domain\\a-digital-company.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

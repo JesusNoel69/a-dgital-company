@@ -1,10 +1,10 @@
-using a_digital_company.Application.Exceptions;
-using a_digital_company.Application.Interfaces.Logging;
-using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Domain;
+using a-digital-company.Application.Exceptions;
+using a-digital-company.Application.Interfaces.Logging;
+using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Domain;
 using MediatR;
 
-namespace a_digital_company.Application.Features.WorkItems.Commands.DeleteWorkItem
+namespace a-digital-company.Application.Features.WorkItems.Commands.DeleteWorkItem
 {
     public class DeleteWorkItemCommandHandler(IWorkItemRepository workItemRepository, IAppLogger<DeleteWorkItemCommandHandler> logger) : IRequestHandler<DeleteWorkItemCommand, Unit>
     {

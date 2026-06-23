@@ -1,9 +1,9 @@
-using a_digital_company.Application.Exceptions;
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Application.Models.Identity;
+using a-digital-company.Application.Exceptions;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Application.Models.Identity;
 using MediatR;
 
-namespace a_digital_company.Application.Features.Users.Queries.GetUserById
+namespace a-digital-company.Application.Features.Users.Queries.GetUserById
 {
     public class GetUserByIdQueryHandler(IUserService _userService) : IRequestHandler<GetUserByIdQuery, User>
     {

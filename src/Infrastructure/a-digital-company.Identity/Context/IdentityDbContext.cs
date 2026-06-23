@@ -1,8 +1,8 @@
-using a_digital_company.Identity.Models;
+using a-digital-company.Identity.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace a_digital_company.Identity.Context
+namespace a-digital-company.Identity.Context
 {
     public class IdentityDbContext(DbContextOptions<IdentityDbContext> options) : IdentityDbContext<ApplicationUser>(options)
     {

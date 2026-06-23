@@ -1,9 +1,9 @@
-using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Domain.Common;
-using a_digital_company.Persistence.Context;
+using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Domain.Common;
+using a-digital-company.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace a_digital_company.Persistence.Repositories
+namespace a-digital-company.Persistence.Repositories
 {
     public class GenericRepository<T>(ApplicationDbContext context) : IGenericRepository<T> where T : BaseEntity
     {

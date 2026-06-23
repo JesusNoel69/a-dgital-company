@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Core\a_digital_company.Application\a_digital_company.Application.csproj" />
-    <ProjectReference Include="..\..\src\Infrastructure\a_digital_company.Persistence\a_digital_company.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\Core\a-digital-company.Application\a-digital-company.Application.csproj" />
+    <ProjectReference Include="..\..\src\Infrastructure\a-digital-company.Persistence\a-digital-company.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

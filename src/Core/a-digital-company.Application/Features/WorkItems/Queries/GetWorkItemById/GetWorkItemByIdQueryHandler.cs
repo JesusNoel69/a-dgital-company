@@ -1,12 +1,12 @@
 using AutoMapper;
-using a_digital_company.Application.Exceptions;
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Application.Models.WorkItem;
-using a_digital_company.Domain;
+using a-digital-company.Application.Exceptions;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Application.Models.WorkItem;
+using a-digital-company.Domain;
 using MediatR;
 
-namespace a_digital_company.Application.Features.WorkItems.Queries.GetWorkItemById
+namespace a-digital-company.Application.Features.WorkItems.Queries.GetWorkItemById
 {
     public class GetWorkItemByIdQueryHandler(IWorkItemRepository workItemRepository, IMapper mapper, IUserService userService) : IRequestHandler<GetWorkItemByIdQuery, WorkItemDto>
     {

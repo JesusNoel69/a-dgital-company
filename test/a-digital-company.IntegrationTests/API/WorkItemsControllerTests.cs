@@ -1,10 +1,10 @@
 using System.Net;
 using System.Net.Http.Json;
-using a_digital_company.Application.Features.WorkItems.Commands.CreateWorkItem;
-using a_digital_company.Application.Models.WorkItem;
+using a-digital-company.Application.Features.WorkItems.Commands.CreateWorkItem;
+using a-digital-company.Application.Models.WorkItem;
 using Xunit;
 
-namespace a_digital_company.IntegrationTests.API{
+namespace a-digital-company.IntegrationTests.API{
     public class WorkItemsControllerTests
         : IClassFixture<CustomWebApplicationFactory>
     {

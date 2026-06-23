@@ -2,7 +2,7 @@
 using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-namespace a_digital_company.Application;
+namespace a-digital-company.Application;
 
 public static class ApplicationServiceRegistration
 {

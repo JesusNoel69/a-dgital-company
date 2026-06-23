@@ -1,13 +1,13 @@
-using a_digital_company.Application.Features.Users.Commands.AssignRole;
-using a_digital_company.Application.Features.Users.Commands.DeleteUser;
-using a_digital_company.Application.Features.Users.Commands.UpdateUser;
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Identity.Models;
+using a-digital-company.Application.Features.Users.Commands.AssignRole;
+using a-digital-company.Application.Features.Users.Commands.DeleteUser;
+using a-digital-company.Application.Features.Users.Commands.UpdateUser;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Identity.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace a_digital_company.API.Controllers
+namespace a-digital-company.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

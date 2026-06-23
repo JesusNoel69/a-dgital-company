@@ -24,10 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\a_digital_company.Application\a_digital_company.Application.csproj" />
-    <ProjectReference Include="..\Infrastructure\a_digital_company.Identity\a_digital_company.Identity.csproj" />
-    <ProjectReference Include="..\Infrastructure\a_digital_company.Infrastructure\a_digital_company.Infrastructure.csproj" />
-    <ProjectReference Include="..\Infrastructure\a_digital_company.Persistence\a_digital_company.Persistence.csproj" />
+    <ProjectReference Include="..\Core\a-digital-company.Application\a-digital-company.Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\a-digital-company.Identity\a-digital-company.Identity.csproj" />
+    <ProjectReference Include="..\Infrastructure\a-digital-company.Infrastructure\a-digital-company.Infrastructure.csproj" />
+    <ProjectReference Include="..\Infrastructure\a-digital-company.Persistence\a-digital-company.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

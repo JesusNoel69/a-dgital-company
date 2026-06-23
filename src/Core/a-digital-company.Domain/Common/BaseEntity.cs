@@ -1,4 +1,4 @@
-namespace a_digital_company.Domain.Common
+namespace a-digital-company.Domain.Common
 {
     public abstract class BaseEntity
     {

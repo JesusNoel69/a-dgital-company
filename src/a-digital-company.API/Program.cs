@@ -1,9 +1,9 @@
-using a_digital_company.API.Middleware;
-using a_digital_company.Application;
-using a_digital_company.Identity;
-using a_digital_company.Identity.Models;
-using a_digital_company.Infrastructure;
-using a_digital_company.Persistence;
+using a-digital-company.API.Middleware;
+using a-digital-company.Application;
+using a-digital-company.Identity;
+using a-digital-company.Identity.Models;
+using a-digital-company.Infrastructure;
+using a-digital-company.Persistence;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
 using Serilog;

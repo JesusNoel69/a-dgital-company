@@ -4,15 +4,15 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Application.Models.Identity;
-using a_digital_company.Identity.Models;
-using a_digital_company.Identity.Context;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Application.Models.Identity;
+using a-digital-company.Identity.Models;
+using a-digital-company.Identity.Context;
 using Microsoft.EntityFrameworkCore;
-using a_digital_company.Application.Exceptions;
-using a_digital_company.Application.Interfaces.Logging;
+using a-digital-company.Application.Exceptions;
+using a-digital-company.Application.Interfaces.Logging;
 
-namespace a_digital_company.Identity.Services
+namespace a-digital-company.Identity.Services
 {
     public class AuthService(
         UserManager<ApplicationUser> userManager,

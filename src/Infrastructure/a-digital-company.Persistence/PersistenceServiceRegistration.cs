@@ -1,11 +1,11 @@
-﻿using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Persistence.Context;
+﻿using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Persistence.Context;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using a_digital_company.Persistence.Repositories;
+using a-digital-company.Persistence.Repositories;
 
-namespace a_digital_company.Persistence;
+namespace a-digital-company.Persistence;
 
 public static class PersistenceServiceRegistration
 {
@@ -16,7 +16,7 @@ public static class PersistenceServiceRegistration
             if (useInMemoryDatabase)
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseInMemoryDatabase("a_digital_companyDB"));
+                    options.UseInMemoryDatabase("a-digital-companyDB"));
             }
             else
             {

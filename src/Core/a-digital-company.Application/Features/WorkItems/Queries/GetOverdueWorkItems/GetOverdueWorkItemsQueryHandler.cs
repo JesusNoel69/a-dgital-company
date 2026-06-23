@@ -1,10 +1,10 @@
-using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Application.Models.WorkItem;
+using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Application.Models.WorkItem;
 using AutoMapper;
 using MediatR;
-using a_digital_company.Application.Interfaces.Identity;
+using a-digital-company.Application.Interfaces.Identity;
 
-namespace a_digital_company.Application.Features.WorkItems.Queries.GetOverdueWorkItems
+namespace a-digital-company.Application.Features.WorkItems.Queries.GetOverdueWorkItems
 {
     public class GetOverdueWorkItemsQueryHandler(IWorkItemRepository workItemRepository, IMapper mapper, IUserService userService) : IRequestHandler<GetOverdueWorkItemsQuery, List<WorkItemDto>>
     {

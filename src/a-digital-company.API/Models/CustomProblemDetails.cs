@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace a_digital_company.API.Models
+namespace a-digital-company.API.Models
 {
     public class CustomProblemDetails : ProblemDetails
     {

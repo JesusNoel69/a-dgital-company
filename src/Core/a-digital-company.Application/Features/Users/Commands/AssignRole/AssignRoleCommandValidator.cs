@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace a_digital_company.Application.Features.Users.Commands.AssignRole
+namespace a-digital-company.Application.Features.Users.Commands.AssignRole
 {
     public class AssignRoleCommandValidator : AbstractValidator<AssignRoleCommand>
     {

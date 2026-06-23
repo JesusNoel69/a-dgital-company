@@ -1,6 +1,6 @@
-using a_digital_company.Domain.Enums;
+using a-digital-company.Domain.Enums;
 
-namespace a_digital_company.Application.Models.WorkItem
+namespace a-digital-company.Application.Models.WorkItem
 {
     public class WorkItemDto
     {

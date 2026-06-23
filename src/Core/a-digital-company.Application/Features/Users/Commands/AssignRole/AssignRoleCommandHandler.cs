@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using a_digital_company.Application.Interfaces.Identity;
+using a-digital-company.Application.Interfaces.Identity;
 using MediatR;
 
-namespace a_digital_company.Application.Features.Users.Commands.AssignRole
+namespace a-digital-company.Application.Features.Users.Commands.AssignRole
 {
     public class AssignRoleCommandHandler(IUserService _userService) : IRequestHandler<AssignRoleCommand, Unit>
     {

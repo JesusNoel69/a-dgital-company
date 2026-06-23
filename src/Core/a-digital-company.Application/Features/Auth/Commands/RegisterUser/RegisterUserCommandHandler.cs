@@ -1,8 +1,8 @@
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Application.Models.Identity;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Application.Models.Identity;
 using MediatR;
 
-namespace a_digital_company.Application.Features.Auth.Commands.RegisterUser
+namespace a-digital-company.Application.Features.Auth.Commands.RegisterUser
 {
     public class RegisterUserCommandHandler(IAuthService authService) 
         : IRequestHandler<RegisterUserCommand, RegistrationResponse>

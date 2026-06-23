@@ -1,4 +1,4 @@
-namespace a_digital_company.Identity.Models
+namespace a-digital-company.Identity.Models
 {
     public static class CustomClaimTypes
     {

@@ -1,6 +1,6 @@
-using a_digital_company.Domain.Common;
+using a-digital-company.Domain.Common;
 
-namespace a_digital_company.Application.Interfaces.Persistence
+namespace a-digital-company.Application.Interfaces.Persistence
 {
     public interface IGenericRepository<T> where T : BaseEntity
     {

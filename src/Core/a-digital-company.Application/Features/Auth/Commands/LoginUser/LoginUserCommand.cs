@@ -1,7 +1,7 @@
-using a_digital_company.Application.Models.Identity;
+using a-digital-company.Application.Models.Identity;
 using MediatR;
 
-namespace a_digital_company.Application.Features.Auth.Commands.LoginUser
+namespace a-digital-company.Application.Features.Auth.Commands.LoginUser
 {
     public class LoginUserCommand : IRequest<AuthResponse>
     {

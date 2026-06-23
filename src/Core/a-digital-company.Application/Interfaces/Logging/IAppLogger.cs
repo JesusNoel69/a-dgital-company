@@ -1,4 +1,4 @@
-namespace a_digital_company.Application.Interfaces.Logging
+namespace a-digital-company.Application.Interfaces.Logging
 {
     public interface IAppLogger<T>
     {

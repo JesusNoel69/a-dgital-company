@@ -1,10 +1,10 @@
-using a_digital_company.Application.Exceptions;
-using a_digital_company.Application.Interfaces.Logging;
-using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Domain;
+using a-digital-company.Application.Exceptions;
+using a-digital-company.Application.Interfaces.Logging;
+using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Domain;
 using MediatR;
 
-namespace a_digital_company.Application.Features.WorkItems.Commands.ChangePriority
+namespace a-digital-company.Application.Features.WorkItems.Commands.ChangePriority
 {
     public class ChangePriorityCommandHandler(IWorkItemRepository workItemRepository, IAppLogger<ChangePriorityCommandHandler> logger) : IRequestHandler<ChangePriorityCommand, Unit>
     {

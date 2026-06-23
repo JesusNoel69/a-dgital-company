@@ -1,13 +1,13 @@
-using a_digital_company.Application.Exceptions;
-using a_digital_company.Application.Features.WorkItems.Commands.DeleteWorkItem;
-using a_digital_company.Application.Interfaces.Logging;
-using a_digital_company.Application.Interfaces.Persistence;
-using a_digital_company.Domain;
-using a_digital_company.UnitTests.Common.Mocks;
+using a-digital-company.Application.Exceptions;
+using a-digital-company.Application.Features.WorkItems.Commands.DeleteWorkItem;
+using a-digital-company.Application.Interfaces.Logging;
+using a-digital-company.Application.Interfaces.Persistence;
+using a-digital-company.Domain;
+using a-digital-company.UnitTests.Common.Mocks;
 using Moq;
 using Xunit;
 
-namespace a_digital_company.UnitTests.Features.WorkItems
+namespace a-digital-company.UnitTests.Features.WorkItems
 {
     public class DeleteWorkItemCommandHandlerTests
     {  

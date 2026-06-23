@@ -1,4 +1,4 @@
-namespace a_digital_company.Domain.Enums
+namespace a-digital-company.Domain.Enums
 {
      public enum WorkItemPriority
     {

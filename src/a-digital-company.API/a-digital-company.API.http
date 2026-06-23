@@ -1,6 +1,6 @@
-@a_digital_company.API_HostAddress = http://localhost:5272
+@a-digital-company.API_HostAddress = http://localhost:5272
 
-GET {{a_digital_company.API_HostAddress}}/weatherforecast/
+GET {{a-digital-company.API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

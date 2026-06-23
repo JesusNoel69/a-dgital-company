@@ -1,9 +1,9 @@
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Domain;
-using a_digital_company.Domain.Common;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Domain;
+using a-digital-company.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
-namespace a_digital_company.Persistence.Context
+namespace a-digital-company.Persistence.Context
 {
     public class ApplicationDbContext(IUserService userService, DbContextOptions<ApplicationDbContext> options) : DbContext(options)
     {

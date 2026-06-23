@@ -1,6 +1,6 @@
-using a_digital_company.Domain;
+using a-digital-company.Domain;
 
-namespace a_digital_company.Application.Interfaces.Persistence
+namespace a-digital-company.Application.Interfaces.Persistence
 {
     public interface IWorkItemRepository : IGenericRepository<WorkItem>
     {

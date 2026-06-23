@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace a_digital_company.Application.Models.Identity
+namespace a-digital-company.Application.Models.Identity
 {
     public class RegistrationRequest
     {

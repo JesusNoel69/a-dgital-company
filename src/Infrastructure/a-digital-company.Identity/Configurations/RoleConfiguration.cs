@@ -1,9 +1,9 @@
-using a_digital_company.Identity.Models;
+using a-digital-company.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace a_digital_company.Identity.Configurations
+namespace a-digital-company.Identity.Configurations
 {
     public class RoleConfiguration : IEntityTypeConfiguration<IdentityRole>
     {

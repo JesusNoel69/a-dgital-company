@@ -1,6 +1,6 @@
-using a_digital_company.Identity.Models; 
+using a-digital-company.Identity.Models; 
 using Microsoft.AspNetCore.Identity;
-namespace a_digital_company.Identity
+namespace a-digital-company.Identity
 {
     public class IdentityDbInitializer
     {

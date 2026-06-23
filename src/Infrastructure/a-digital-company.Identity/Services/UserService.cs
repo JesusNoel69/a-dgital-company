@@ -1,13 +1,13 @@
 using System.Security.Claims;
-using a_digital_company.Application.Exceptions;
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Application.Interfaces.Logging;
-using a_digital_company.Application.Models.Identity;
-using a_digital_company.Identity.Models;
+using a-digital-company.Application.Exceptions;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Application.Interfaces.Logging;
+using a-digital-company.Application.Models.Identity;
+using a-digital-company.Identity.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
-namespace a_digital_company.Identity.Services
+namespace a-digital-company.Identity.Services
 {
     public class UserService(UserManager<ApplicationUser> userManager, IHttpContextAccessor contextAccessor, IAppLogger<UserService> logger) : IUserService
     {

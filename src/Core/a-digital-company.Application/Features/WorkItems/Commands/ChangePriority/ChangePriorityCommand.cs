@@ -1,7 +1,7 @@
-using a_digital_company.Domain.Enums;
+using a-digital-company.Domain.Enums;
 using MediatR;
 
-namespace a_digital_company.Application.Features.WorkItems.Commands.ChangePriority
+namespace a-digital-company.Application.Features.WorkItems.Commands.ChangePriority
 {
     public class ChangePriorityCommand : IRequest<Unit>
     {

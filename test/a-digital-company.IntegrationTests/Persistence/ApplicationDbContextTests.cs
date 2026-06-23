@@ -1,12 +1,12 @@
-using a_digital_company.Application.Interfaces.Identity;
-using a_digital_company.Domain;
-using a_digital_company.Domain.Enums;
-using a_digital_company.Persistence.Context;
+using a-digital-company.Application.Interfaces.Identity;
+using a-digital-company.Domain;
+using a-digital-company.Domain.Enums;
+using a-digital-company.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using Xunit;
 
-namespace a_digital_company.IntegrationTests.Persistence
+namespace a-digital-company.IntegrationTests.Persistence
 {
     public class ApplicationDbContextTests
     {

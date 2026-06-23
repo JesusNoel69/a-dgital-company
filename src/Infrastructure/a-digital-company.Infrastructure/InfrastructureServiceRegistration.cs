@@ -1,8 +1,8 @@
-﻿using a_digital_company.Application.Interfaces.Logging;
-using a_digital_company.Infrastructure.Logging;
+﻿using a-digital-company.Application.Interfaces.Logging;
+using a-digital-company.Infrastructure.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace a_digital_company.Infrastructure;
+namespace a-digital-company.Infrastructure;
 
 public static class InfrastructureServiceRegistration
 {

@@ -1,10 +1,10 @@
 using System.Net;
 using System.Net.Http.Json;
-using a_digital_company.Application.Features.Auth.Commands.RegisterUser;
-using a_digital_company.Application.Models.Identity;
+using a-digital-company.Application.Features.Auth.Commands.RegisterUser;
+using a-digital-company.Application.Models.Identity;
 using Xunit;
 
-namespace a_digital_company.IntegrationTests.API
+namespace a-digital-company.IntegrationTests.API
 {
     public class AuthControllerTests
         : IClassFixture<CustomWebApplicationFactory>

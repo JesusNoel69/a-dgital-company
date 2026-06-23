@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace a_digital_company.Application.Features.WorkItems.Commands.CreateWorkItem
+namespace a-digital-company.Application.Features.WorkItems.Commands.CreateWorkItem
 {
     public class CreateWorkItemCommandValidator: AbstractValidator<CreateWorkItemCommand>
     {

@@ -1,7 +1,7 @@
-using a_digital_company.Domain.Common;
-using a_digital_company.Domain.Enums;
+using a-digital-company.Domain.Common;
+using a-digital-company.Domain.Enums;
 
-namespace a_digital_company.Domain
+namespace a-digital-company.Domain
 {
     public class WorkItem : BaseEntity
     {

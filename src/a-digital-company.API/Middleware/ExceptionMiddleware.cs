@@ -1,11 +1,11 @@
 using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using a_digital_company.API.Models;
-using a_digital_company.Application.Exceptions;
+using a-digital-company.API.Models;
+using a-digital-company.Application.Exceptions;
 using FluentValidation;
 
-namespace a_digital_company.API.Middleware
+namespace a-digital-company.API.Middleware
 {
     public class ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
     {

@@ -1,8 +1,8 @@
-using a_digital_company.Application.Features.WorkItems.Commands.ChangePriority;
-using a_digital_company.Domain;
-using a_digital_company.Domain.Enums;
+using a-digital-company.Application.Features.WorkItems.Commands.ChangePriority;
+using a-digital-company.Domain;
+using a-digital-company.Domain.Enums;
 
-namespace a_digital_company.UnitTests.Common.Mocks
+namespace a-digital-company.UnitTests.Common.Mocks
 {
     public static class WorkItemMockData
     {
