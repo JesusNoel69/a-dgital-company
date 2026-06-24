@@ -1,0 +1,12 @@
+using ADigitalCompany.Application.Models.Identity;
+namespace ADigitalCompany.Application.Interfaces.Identity
+{
+    public interface IAuthService
+    {
+        Task<AuthResponse> Login(AuthRequest request);
+        Task<AuthResponse> RefreshTokenAsync(string token);
+        Task RevokeTokenAsync(string token);
+        Task<RegistrationResponse> Register(RegistrationRequest request);
+        
+    }
+}
