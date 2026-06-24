@@ -9,6 +9,8 @@ namespace ADigitalCompany.Persistence.Context
     {
         private readonly IUserService _userService = userService;
         public DbSet<WorkItem> WorkItem { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var entry in base.ChangeTracker.Entries<BaseEntity>()
