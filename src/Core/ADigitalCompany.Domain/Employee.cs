@@ -1,0 +1,19 @@
+using ADigitalCompany.Domain.Common;
+using ADigitalCompany.Domain.Enums;
+
+namespace ADigitalCompany.Domain
+{
+    public class Employee : BaseEntity
+    {
+        public Guid IdentityUserId { get; private set; }
+        public string Name { get; private set; }
+        public string LastName { get; private set; }
+        public string? PhotoUrl { get; private set; }
+        public string Rfc { get; private set; }
+        public string SocialNumber { get; private set; }
+        public DateTime HireDate { get; private set; }
+        public JobPosition JobPosition { get; private set; }
+        public Department Department { get; private set; }
+        public decimal Salary { get; private set; }
+    }
+}
