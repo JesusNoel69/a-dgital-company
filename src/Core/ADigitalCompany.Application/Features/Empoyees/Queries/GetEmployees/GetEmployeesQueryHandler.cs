@@ -23,8 +23,8 @@ namespace ADigitalCompany.Application.Features.Empoyees.Queries.GetEmployees
                 user => user.Id,
                 (emp, user) => new EmployeeDto
                 {
-                    Name = emp.Name,
-                    LastName = emp.LastName,
+                    Name = user?.FirstName,
+                    LastName = user.LastName,
                     HireDate = emp.HireDate,
                     Email = user?.Email??"",
                     PhotoUrl = emp.PhotoUrl,
