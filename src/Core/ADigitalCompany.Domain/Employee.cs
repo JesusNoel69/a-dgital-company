@@ -5,10 +5,8 @@ namespace ADigitalCompany.Domain
 {
     public class Employee : BaseEntity
     {
-        public Guid IdentityUserId { get; private set; }
-        public string Name { get; private set; }
+        public string IdentityUserId { get; private set; } = default!;
         public string ClockNumber { get; private set; } = default!;
-        public string LastName { get; private set; }
         public string? PhotoUrl { get; private set; }
         public string Rfc { get; private set; }
         public string SocialNumber { get; private set; }
