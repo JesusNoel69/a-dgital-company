@@ -1,6 +1,7 @@
 using ADigitalCompany.Application.Interfaces.Identity;
 using ADigitalCompany.Application.Interfaces.Persistence;
 using ADigitalCompany.Application.Models;
+using ADigitalCompany.Application.Models.Employee;
 using ADigitalCompany.Domain;
 using AutoMapper;
 using MediatR;
