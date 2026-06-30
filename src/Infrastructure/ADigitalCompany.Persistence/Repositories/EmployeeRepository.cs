@@ -39,5 +39,9 @@ namespace ADigitalCompany.Persistence.Repositories
                 .Distinct()
                 .ToListAsync();
         }
+        public async Task<bool> HasEmployeesAsync(int departmentId)
+        {
+            return await _context.Employees.AnyAsync(x=>x.Department.Id==departmentId);
+        }
     }
 }

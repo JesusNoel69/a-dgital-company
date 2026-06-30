@@ -30,6 +30,13 @@ namespace ADigitalCompany.Domain
 
             Name = name;
         }
+        public void ChangeCode(string code)
+        {
+            if (string.IsNullOrWhiteSpace(code)) //maybe it needs autogenerate utility
+                throw new ArgumentException("Department Code is required.");
+
+            Code = code;
+        }
         public void ChangeManager(string managerId)
         {
             ResponsibleId = managerId;
