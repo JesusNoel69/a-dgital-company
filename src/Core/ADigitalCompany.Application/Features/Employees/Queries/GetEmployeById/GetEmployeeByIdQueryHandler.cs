@@ -3,7 +3,7 @@ using ADigitalCompany.Application.Interfaces.Persistence;
 using ADigitalCompany.Application.Models;
 using MediatR;
 
-namespace ADigitalCompany.Application.Features.Empoyees.Queries.GetEmployeById
+namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployeById
 {
     public class GetEmployeeByIdQueryHandler(IEmployeeRepository employeeRepository, IUserService userService) : IRequestHandler<GetEmployeeByIdQuery, EmployeeDto>
     {

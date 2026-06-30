@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Caching.Memory;
 using ADigitalCompany.Identity.Configurations;
+using ADigitalCompany.Application.Constants;
 namespace ADigitalCompany.Identity
 {
     public static class IdentityServiceRegistration

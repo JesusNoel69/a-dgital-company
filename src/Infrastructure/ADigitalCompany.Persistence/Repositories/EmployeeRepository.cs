@@ -22,7 +22,7 @@ namespace ADigitalCompany.Persistence.Repositories
             return await _context.Employees.AsNoTracking().FirstOrDefaultAsync(x=> x.ClockNumber==employeeNumber);
         }
 
-        public async Task<Employee?> GetByIdentityUserIdAsync(Guid identityUserId)
+        public async Task<Employee?> GetByIdentityUserIdAsync(string identityUserId)
         {
             return await _context.Employees.AsNoTracking().FirstOrDefaultAsync(x=>x.IdentityUserId==identityUserId);
         }

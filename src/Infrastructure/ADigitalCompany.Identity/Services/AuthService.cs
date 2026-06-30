@@ -11,6 +11,7 @@ using ADigitalCompany.Identity.Context;
 using Microsoft.EntityFrameworkCore;
 using ADigitalCompany.Application.Exceptions;
 using ADigitalCompany.Application.Interfaces.Logging;
+using ADigitalCompany.Application.Constants;
 
 namespace ADigitalCompany.Identity.Services
 {

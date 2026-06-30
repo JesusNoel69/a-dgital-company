@@ -5,6 +5,7 @@ namespace ADigitalCompany.Application.Interfaces.Identity
     {
         Task<List<User?>> GetUsers();
         Task<User> GetUser(string userId);
+        Task<User> CreateUser(CreateUserRequest user);
         public string UserId { get; }
         Task<User> UpdateUser(UpdateUserRequest request);
         Task DeleteUser(string userId);

@@ -1,4 +1,4 @@
-namespace ADigitalCompany.Identity.Models
+namespace ADigitalCompany.Application.Constants
 {
     public static class Roles
     {

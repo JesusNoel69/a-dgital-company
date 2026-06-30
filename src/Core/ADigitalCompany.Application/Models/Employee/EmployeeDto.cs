@@ -1,4 +1,4 @@
-namespace ADigitalCompany.Application.Models
+namespace ADigitalCompany.Application.Models.Employee
 {
     public class EmployeeDto
     {

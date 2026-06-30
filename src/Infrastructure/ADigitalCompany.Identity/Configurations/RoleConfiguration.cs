@@ -1,4 +1,4 @@
-using ADigitalCompany.Identity.Models;
+using ADigitalCompany.Application.Constants;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

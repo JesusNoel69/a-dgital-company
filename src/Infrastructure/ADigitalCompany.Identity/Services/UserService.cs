@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using ADigitalCompany.Application.Constants;
 using ADigitalCompany.Application.Exceptions;
 using ADigitalCompany.Application.Interfaces.Identity;
 using ADigitalCompany.Application.Interfaces.Logging;
@@ -149,6 +150,85 @@ namespace ADigitalCompany.Identity.Services
                 Id = user.Id,
                 LastName = user.LastName,
                 UserName = user.UserName,
+            };
+        }
+        public async Task<User> CreateUser(CreateUserRequest request)
+        {
+            _logger.LogInformation(
+                "Creating user with email {Email}",
+                request.Email);
+
+            var existingUser = await _userManager.FindByEmailAsync(request.Email);
+
+            if (existingUser is not null)
+            {
+                _logger.LogWarning(
+                    "User creation failed. Email {Email} already exists",
+                    request.Email);
+
+                throw new BadRequestException($"Email '{request.Email}' is already registered.");
+            }
+
+            if (!ValidRoles.Contains(request.Role))
+            {
+                _logger.LogWarning(
+                    "User creation failed. Invalid role {Role}",
+                    request.Role);
+
+                throw new NotFoundException("Role", request.Role);
+            }
+
+            var user = new ApplicationUser
+            {
+                Email = request.Email,
+                UserName = request.Email,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                EmailConfirmed = true
+            };
+
+            var result = await _userManager.CreateAsync(user, request.Password);
+
+            if (!result.Succeeded)
+            {
+                _logger.LogWarning(
+                    "User creation failed for {Email}. Errors: {Errors}",
+                    request.Email,
+                    string.Join(", ", result.Errors.Select(x => x.Code)));
+
+                throw new BadRequestException(
+                    string.Join(Environment.NewLine,
+                        result.Errors.Select(x => x.Description)));
+            }
+
+            var roleResult = await _userManager.AddToRoleAsync(user, request.Role);
+
+            if (!roleResult.Succeeded)
+            {
+                await _userManager.DeleteAsync(user);
+
+                _logger.LogWarning(
+                    "Role assignment failed for user {Email}. Errors: {Errors}",
+                    request.Email,
+                    string.Join(", ", roleResult.Errors.Select(x => x.Code)));
+
+                throw new BadRequestException(
+                    string.Join(Environment.NewLine,
+                        roleResult.Errors.Select(x => x.Description)));
+            }
+
+            _logger.LogInformation(
+                "User {UserId} created successfully",
+                user.Id);
+
+            return new User
+            {
+                Id = user.Id,
+                Email = user.Email!,
+                UserName = user.UserName!,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Roles = [request.Role]
             };
         }
     }

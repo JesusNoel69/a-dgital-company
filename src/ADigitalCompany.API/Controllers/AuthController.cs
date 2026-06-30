@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using ADigitalCompany.Application.Constants;
 using ADigitalCompany.Application.Features.Auth.Commands.LoginUser;
 using ADigitalCompany.Application.Features.Auth.Commands.RefreshToken;
 using ADigitalCompany.Application.Features.Auth.Commands.RegisterUser;
@@ -6,7 +7,6 @@ using ADigitalCompany.Application.Features.Auth.Commands.RevokeToken;
 using ADigitalCompany.Application.Features.Auth.Queries.GetCurrentUser;
 using ADigitalCompany.Application.Interfaces.Identity;
 using ADigitalCompany.Application.Models.Identity;
-using ADigitalCompany.Identity.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

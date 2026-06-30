@@ -5,7 +5,7 @@ using ADigitalCompany.Domain;
 using AutoMapper;
 using MediatR;
 
-namespace ADigitalCompany.Application.Features.Empoyees.Queries.GetEmployees
+namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployees
 {
     public class GetEmployeesQueryHandler(IEmployeeRepository employeeRepository, IUserService userService) : IRequestHandler<GetEmployeesQuery, IReadOnlyList<EmployeeDto>>
     {
