@@ -21,11 +21,16 @@ public static class PersistenceServiceRegistration
             else
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(configuration.GetConnectionString("DatabaseConnectionString")));
+                {
+                    var connectionString = configuration.GetConnectionString("DatabaseConnectionString"); 
+                    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+                });
             }
            
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IWorkItemRepository, WorkItemRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IDepartmentRepository, DeparmentRepository>();
             
             return services;
         }

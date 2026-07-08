@@ -19,6 +19,7 @@ namespace ADigitalCompany.Identity
     {
         public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration configuration)
         {
+
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));   
             var useInMemoryDatabase = configuration.GetValue<bool>("UseInMemoryDatabase");
             if (useInMemoryDatabase)
@@ -30,7 +31,10 @@ namespace ADigitalCompany.Identity
             else
             {
                 services.AddDbContext<IdentityDbContext>(options =>
-                    options.UseSqlServer(configuration.GetConnectionString("DatabaseConnectionString")));
+                {
+                    var connectionString = configuration.GetConnectionString("DatabaseConnectionString"); 
+                    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+                });
             }
             
             
