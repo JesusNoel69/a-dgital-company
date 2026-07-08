@@ -67,7 +67,7 @@ namespace ADigitalCompany.Persistence.Configurations
                     Rfc = "XEXX010101000",
                     SocialNumber = "98765432101",
                     HireDate = new DateTime(2024, 2, 1),
-                    JobPosition = 1,
+                    JobPosition = JobPosition.Operator,
                     DepartmentId = 2,
                     Salary = 18000m,
                     PhotoUrl = (string?)null
