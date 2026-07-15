@@ -7,7 +7,7 @@
     <header class="card__header">
       <h1 class="card__title">Company Name</h1>
 
-      <img class="card__photo" src="" alt="Employee photo" />
+      <img class="card__photo" src="{{ user()?.photoUrl }}" alt="Employee photo" />
 
       <h2>{{ user()?.clockNumber }}</h2>
 
