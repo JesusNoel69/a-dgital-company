@@ -1,8 +1,8 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { DatePipe, NgOptimizedImage } from '@angular/common';
-import { URL } from '../../../core/constants/api';
 import { Employee } from '../../../core/models/Employee';
+import { AuthService } from '../../../core/services/auth.service';
+import { EmployeeService } from '../../../core/services/employee.service';
 @Component({
   selector: 'employee-badge',
   imports: [DatePipe, NgOptimizedImage],
@@ -12,8 +12,6 @@ import { Employee } from '../../../core/models/Employee';
 export class Badge implements OnInit {
   public user = signal<Employee | null>(null);
   public changeBand = signal(false);
-  private userId: number = 1;
-  private readonly urlEmployee = URL + 'api/Employees/' + this.userId;
   public readonly ourValues = [
     'Security and Responsabilty',
     'Integrity and Transparency',
@@ -22,12 +20,19 @@ export class Badge implements OnInit {
     'Purpose',
   ];
 
-  constructor(private readonly client: HttpClient) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly userService: EmployeeService,
+  ) {}
   async ngOnInit() {
-    console.log(this.urlEmployee);
-    this.client.get<Employee>(this.urlEmployee).subscribe({
+    const id = this.authService.getCurrentUserId();
+    console.log('es' + id);
+    if (id === -1) {
+      return;
+    }
+    this.userService.getById(id).subscribe({
       next: (employee) => {
-        this.user?.set(employee);
+        this.user.set(employee);
         console.log(employee);
       },
       error: (err) => {

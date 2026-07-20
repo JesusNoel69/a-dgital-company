@@ -1,10 +1,9 @@
 import { NgOptimizedImage } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthRequest } from '../../../../core/models/AuthRequest';
-import { URL } from '../../../../core/constants/api';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthResponse } from '../../../../core/models/AuthResponse';
+import { AuthService } from '../../../../core/services/auth.service';
 
 @Component({
   selector: 'user-login',
@@ -13,12 +12,11 @@ import { AuthResponse } from '../../../../core/models/AuthResponse';
   styleUrl: './login.css',
 })
 export class Login {
-  private readonly urlLogin = URL + 'api/Auth/login';
   loginForm: FormGroup;
   private loginResponse!: AuthResponse;
   constructor(
     private readonly fb: FormBuilder,
-    private readonly client: HttpClient,
+    private readonly authService: AuthService,
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -26,19 +24,22 @@ export class Login {
     });
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
     }
-    const body = new AuthRequest(
+    const request = new AuthRequest(
       this.loginForm.controls['email'].value,
       this.loginForm.controls['password'].value,
     );
 
-    this.client.post<AuthResponse>(this.urlLogin, body).subscribe({
+    this.authService.login(request).subscribe({
       next: (response) => {
         this.loginResponse = response;
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('refreshToken', response.refreshToken);
+        localStorage.setItem('userLoggedId', this.loginResponse.id);
         console.log(this.loginResponse);
       },
       error: (error) => {
