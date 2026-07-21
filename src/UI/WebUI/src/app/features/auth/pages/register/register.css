@@ -8,11 +8,6 @@ button {
   font-weight: bold;
 }
 
-input {
-  border-radius: 0 5px 5px 0;
-  font-weight: 400;
-}
-
 button,
 a {
   cursor: pointer;
@@ -21,18 +16,6 @@ a {
 .register__submit-button {
   width: 12rem;
   border-radius: 2rem;
-}
-
-.register__input-image {
-  border-radius: 10px 0 0 10px;
-  padding: 3px;
-  height: 100%;
-  background: powderblue;
-}
-
-.display_field {
-  display: flex;
-  width: 100%;
 }
 
 a {
@@ -82,4 +65,10 @@ a {
 #first-name,
 #last-name {
   height: 48px;
+  font-size: medium;
+  font-weight: 400;
+}
+
+form-field {
+  width: 100%;
 }

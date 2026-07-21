@@ -4,10 +4,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AuthService } from '../../../../core/services/auth.service';
 import { RegisterResponse } from '../../../../core/models/RegisterResponse';
 import { RegisterRequest } from '../../../../core/models/RegisterRequest';
+import { FormField } from '../../../../shared/components/form-field/form-field/form-field';
 
 @Component({
   selector: 'user-register',
-  imports: [NgOptimizedImage, ReactiveFormsModule],
+  imports: [NgOptimizedImage, ReactiveFormsModule, FormField],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
@@ -27,7 +28,6 @@ export class Register {
     });
   }
   onSubmit() {
-    console.log(1);
     if (this.registerForm.invalid) {
       console.log('invalid');
       return;
@@ -36,7 +36,7 @@ export class Register {
       this.registerForm.controls['password'].value !==
       this.registerForm.controls['passwordConfirm'].value
     ) {
-      console.log('password and its confirmation are different');
+      console.log('password and confirmation are different');
       return;
     }
     const userName = `${this.registerForm.controls['firstName'].value} ${this.registerForm.controls['lastName'].value}`;

@@ -1,52 +1,37 @@
 <main class="register__container">
   <h1>Sign Up</h1>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register__form">
-    <div class="display_field">
-      <label for="email">
-        <img
-          ngSrc="assets/email_icon.svg"
-          alt="email icon"
-          width="48"
-          height="48"
-          class="register__input-image"
-        />
-      </label>
-      <input type="email" placeholder="Email" formControlName="email" id="email" />
-    </div>
+    <form-field
+      [form]="registerForm"
+      [descriptionImage]="'Email Icon'"
+      [type]="'email'"
+      [id]="'email'"
+      [controlName]="'email'"
+      [iconSrc]="'assets/email_icon.svg'"
+      [placeHolder]="'Email'"
+    ></form-field>
     <div style="display: flex; flex-direction: row; gap: 1rem">
       <input type="text" placeholder="First Name" formControlName="firstName" id="first-name" />
       <input type="text" placeholder="Last Name" formControlName="lastName" id="last-name" />
     </div>
-
-    <div class="display_field">
-      <label for="password">
-        <img
-          ngSrc="assets/lock_icon.svg"
-          alt="passwrd input image"
-          width="48"
-          height="48"
-          class="register__input-image"
-        />
-      </label>
-      <input type="password" placeholder="Password" formControlName="password" id="password" />
-    </div>
-    <div class="display_field">
-      <label for="password-confirm">
-        <img
-          ngSrc="assets/lock_icon.svg"
-          alt="password input image"
-          width="48"
-          height="48"
-          class="register__input-image"
-        />
-      </label>
-      <input
-        type="password"
-        placeholder="Confirm"
-        formControlName="passwordConfirm"
-        id="password-confirm"
-      />
-    </div>
+    <form-field
+      [form]="registerForm"
+      [descriptionImage]="'Password input image'"
+      [type]="'password'"
+      [id]="'password'"
+      [controlName]="'password'"
+      [iconSrc]="'assets/lock_icon.svg'"
+      [placeHolder]="'Password'"
+    ></form-field>
+    <form-field
+      [form]="registerForm"
+      [descriptionImage]="'Password confirm input image'"
+      [type]="'password'"
+      [id]="'password-confirm'"
+      [controlName]="'passwordConfirm'"
+      [iconSrc]="'assets/lock_icon.svg'"
+      [placeHolder]="'Confirm'"
+    ></form-field>
     <section class="register__action">
       <button type="submit" class="register__submit-button">Create Account</button>
       <p>Already have an account? <a href="">Sign in</a></p>

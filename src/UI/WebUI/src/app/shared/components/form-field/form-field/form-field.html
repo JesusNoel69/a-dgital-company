@@ -1,0 +1,12 @@
+<div class="display_field" [formGroup]="form">
+  <label [for]="id">
+    <img
+      [ngSrc]="iconSrc"
+      [alt]="descriptionImage"
+      width="48"
+      height="48"
+      class="form__input-image"
+    />
+  </label>
+  <input [id]="id" [type]="type" [placeholder]="placeHolder" [formControlName]="controlName" />
+</div>

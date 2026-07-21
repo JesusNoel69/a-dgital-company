@@ -4,10 +4,11 @@ import { AuthRequest } from '../../../../core/models/AuthRequest';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthResponse } from '../../../../core/models/AuthResponse';
 import { AuthService } from '../../../../core/services/auth.service';
+import { FormField } from '../../../../shared/components/form-field/form-field/form-field';
 
 @Component({
   selector: 'user-login',
-  imports: [NgOptimizedImage, ReactiveFormsModule],
+  imports: [NgOptimizedImage, ReactiveFormsModule, FormField],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
