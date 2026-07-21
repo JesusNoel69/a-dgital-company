@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Badge } from './shared/components/badge/badge';
 import { Login } from './features/auth/pages/login/login';
+import { Register } from './features/auth/pages/register/register';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Badge, Login],
+  imports: [RouterOutlet, Badge, Login, Register],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
