@@ -1,18 +1,16 @@
 <div class="sidebar" [class.sidebar--closed]="!sidebarVisible">
-  <button>Users management</button>
-  <button>Departments</button>
-  <button>Station</button>
-  <button>Users management</button>
-  <button>Departments</button>
-  <button>Station</button> <button>Users management</button>
-  <button>Departments</button>
-  <button>Station</button> <button>Users management</button>
-  <button>Departments</button>
-  <button>Station</button> <button>Users management</button>
-  <button>Departments</button>
-  <button>Station</button> <button>Users management</button>
-  <button>Departments</button>
-  <button>Station</button>
+  <button>
+    <img src="assets/user_icon.svg" alt="" width="24" height="24" />
+    <span>Users</span>
+  </button>
+  <button>
+    <img src="assets/user_icon.svg" alt="" width="24" height="24" />
+    <span>Departments</span>
+  </button>
+  <button>
+    <img src="assets/user_icon.svg" alt="" width="24" height="24" />
+    <span>Station</span>
+  </button>
 </div>
 <button class="sidebar__toggle" [class.button--closed]="!sidebarVisible" (click)="toggleSidebar()">
   {{ sidebarVisible ? '<' : '>' }}

@@ -3,23 +3,34 @@ button {
   margin: 0;
   padding: 1rem;
   border: whitesmoke;
+  border-radius: 5px;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  white-space: nowrap;
 }
+
 button:focus,
 button:hover {
   background: whitesmoke;
+  color: var(--color-text);
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: calc(10rem + 3px);
+  width: 15rem;
   min-height: 100%;
   gap: 0;
   margin: 0;
   padding: 0;
-  background: steelblue;
-  transition: transform 0.3s;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  transition: width 0.3s ease;
   overflow-x: hidden;
   border-right: 4px steelblue solid;
   overflow-y: auto;
@@ -28,28 +39,35 @@ button:hover {
 }
 
 .sidebar--closed {
-  transform: translateX(-10rem); /*-100%*/
+  width: 4rem;
+}
+
+.sidebar--closed button span {
+  display: none;
 }
 
 .sidebar__toggle {
   position: fixed;
-  height: 5rem;
-  width: 1rem;
+  height: 4rem;
+  width: 2.5rem;
   border: none;
-  background: steelblue;
   top: calc(50% - 2rem);
   text-align: center;
   justify-content: center;
   align-items: center;
   display: flex;
-  border-radius: 0 5px 5px 0;
-  transform: translateX(calc(10rem + 3px));
+  border-radius: 0 7rem 7rem 0;
+  transform: translateX(15rem);
+  border-right: 4px steelblue solid;
+  border-top: 4px steelblue solid;
+  border-bottom: 4px steelblue solid;
   transition: transform 0.3s;
 }
 .sidebar__toggle:hover,
 .sidebar__toggle:focus {
-  background: steelblue;
+  background: var(--color-primary);
 }
+
 .button--closed {
-  transform: translateX(0);
+  transform: translateX(4rem);
 }
