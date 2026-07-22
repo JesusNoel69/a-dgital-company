@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <div style="display: flex; gap: 1rem">
+    <img src="assets/logo.svg" class="navbar__logo" />
+    <span>|</span>
+    <h2 class="navbar__title">ADigitalCompany</h2>
+    <span>|</span>
+    <div class="navbar__spacer"></div>
+  </div>
+  <div style="display: flex; gap: 1rem; justify-content: center; align-items: center">
+    <button class="navbar__icon">🔔</button>
+    <span>|</span>
+    <button class="navbar__profile" (click)="toggleMenu()">
+      <img width="24" height="24" src="assets/user_icon.svg" />
+      <div style="display: flex; flex-direction: column; justify-content: flex-start">
+        <span>User Name</span>
+        <span>email@email.com</span>
+      </div>
+      <span>▼</span>
+    </button>
+    @if (showMenu()) {
+      <div class="backdrop" (click)="showMenu.set(false)"></div>
+      <div class="profile__menu">
+        <button (click)="showMenu.set(false)">⚙ Configuration</button>
+        <button (click)="showMenu.set(false)">🌙 Dark mode</button>
+        <button (click)="showMenu.set(false)">🪪 Badge</button>
+        <hr />
+        <button (click)="showMenu.set(false)">🚪 Logout</button>
+      </div>
+    }
+  </div>
+</nav>

@@ -1,0 +1,19 @@
+<div class="sidebar" [class.sidebar--closed]="!sidebarVisible">
+  <button>Users management</button>
+  <button>Departments</button>
+  <button>Station</button>
+  <button>Users management</button>
+  <button>Departments</button>
+  <button>Station</button> <button>Users management</button>
+  <button>Departments</button>
+  <button>Station</button> <button>Users management</button>
+  <button>Departments</button>
+  <button>Station</button> <button>Users management</button>
+  <button>Departments</button>
+  <button>Station</button> <button>Users management</button>
+  <button>Departments</button>
+  <button>Station</button>
+</div>
+<button class="sidebar__toggle" [class.button--closed]="!sidebarVisible" (click)="toggleSidebar()">
+  {{ sidebarVisible ? '<' : '>' }}
+</button>
