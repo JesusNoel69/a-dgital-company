@@ -4,10 +4,11 @@ import { Badge } from './shared/components/badge/badge';
 import { Login } from './features/auth/pages/login/login';
 import { Register } from './features/auth/pages/register/register';
 import { PageLayout } from './layout/page-layout/page-layout';
+import { Spinner } from './shared/components/spinner/spinner';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Badge, Login, Register, PageLayout],
+  imports: [RouterOutlet, Badge, Login, Register, PageLayout, Spinner],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

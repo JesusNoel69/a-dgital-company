@@ -3,9 +3,10 @@ import { DatePipe, NgOptimizedImage } from '@angular/common';
 import { Employee } from '../../../core/models/Employee';
 import { AuthService } from '../../../core/services/auth.service';
 import { EmployeeService } from '../../../core/services/employee.service';
+import { Spinner } from '../spinner/spinner';
 @Component({
   selector: 'employee-badge',
-  imports: [DatePipe, NgOptimizedImage],
+  imports: [DatePipe, NgOptimizedImage, Spinner],
   templateUrl: './badge.html',
   styleUrl: './badge.css',
 })

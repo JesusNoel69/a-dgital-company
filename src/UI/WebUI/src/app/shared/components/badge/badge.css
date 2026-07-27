@@ -34,7 +34,6 @@ button {
   transition: transform 0.8s;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  color: var(--color-text);
   box-shadow: 5px 5px 5px 3px rgb(0 0 0 / 12%);
 }
 

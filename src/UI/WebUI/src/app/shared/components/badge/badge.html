@@ -5,13 +5,24 @@
     </button>
 
     <header class="card__header">
-      <h1 class="card__title">Company Name</h1>
+      @defer (on viewport) {
+        <h1 class="card__title">Company Name</h1>
+      } @placeholder {
+        <h1 class="card__title">...</h1>
+      }
 
-      <img class="card__photo" src="{{ user()?.photoUrl }}" alt="Employee photo" />
-
-      <h2>{{ user()?.clockNumber }}</h2>
-
-      <h3 class="card__employee">{{ user()?.name }} {{ user()?.lastName }}</h3>
+      @if (user()?.photoUrl) {
+        <img class="card__photo" src="{{ user()?.photoUrl }}" alt="Employee photo" />
+      } @else {
+        <app-spinner [size]="48" />
+      }
+      @if (!user()) {
+        <h2>{{ user()?.clockNumber }}</h2>
+        <h3 class="card__employee">{{ user()?.name }} {{ user()?.lastName }}</h3>
+      } @else {
+        <h2>...</h2>
+        <h3 class="card__employee">Loading user...</h3>
+      }
     </header>
 
     <section class="card__content">
