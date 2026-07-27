@@ -1,16 +1,18 @@
 <nav class="navbar">
-  <div style="display: flex; gap: 1rem">
+  <div class="navbar__display">
     <img src="assets/logo.svg" class="navbar__logo" />
     <hr class="navbar__divider" />
-    <h2 class="navbar__title">ADigitalCompany</h2>
+    <h2 class="navbar__title">
+      <button class="navbar__title" routerLink="">ADigitalCompany</button>
+    </h2>
     <div class="navbar__spacer"></div>
   </div>
-  <div style="display: flex; gap: 1rem; justify-content: center; align-items: center">
+  <div class="navbar__display">
     <button class="navbar__icon">🔔</button>
     <hr class="navbar__divider" />
     <button class="navbar__profile" (click)="toggleMenu()">
       <img width="24" height="24" src="assets/user_icon.svg" />
-      <div style="display: flex; flex-direction: column; justify-content: flex-start">
+      <div class="navbar__user">
         <span>User Name</span>
         <span>email@email.com</span>
       </div>
@@ -19,11 +21,11 @@
     @if (showMenu()) {
       <div class="backdrop" (click)="showMenu.set(false)"></div>
       <div class="profile__menu">
-        <button (click)="showMenu.set(false)">⚙ Configuration</button>
-        <button (click)="showMenu.set(false)">🌙 Dark mode</button>
-        <button (click)="showMenu.set(false)">🪪 Badge</button>
+        <button (click)="showMenu.set(false)" disabled>⚙ Configuration</button>
+        <button (click)="showMenu.set(false)" disabled>🌙 Dark mode</button>
+        <button (click)="showMenu.set(false)" routerLink="dashboard/badge">🪪 Badge</button>
         <hr />
-        <button (click)="showMenu.set(false)">🚪 Logout</button>
+        <button (click)="showMenu.set(false)" disbaled>🚪 Logout</button>
       </div>
     }
   </div>

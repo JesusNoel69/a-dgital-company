@@ -2,7 +2,7 @@ button {
   width: 100%;
   margin: 0;
   padding: 1rem;
-  border: whitesmoke;
+  border: var(--color-primary);
   border-radius: 5px;
   background: var(--color-primary);
   color: var(--color-text-inverse);
@@ -16,8 +16,8 @@ button {
 
 button:focus,
 button:hover {
-  background: whitesmoke;
-  color: var(--color-text);
+  background: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .sidebar {
@@ -30,7 +30,7 @@ button:hover {
   padding: 0;
   background: var(--color-primary);
   color: var(--color-text-inverse);
-  transition: width 0.3s ease;
+  transition: width 0.3s;
   overflow-x: hidden;
   border-right: 4px steelblue solid;
   overflow-y: auto;
@@ -47,6 +47,7 @@ button:hover {
 }
 
 .sidebar__toggle {
+  z-index: 999;
   position: fixed;
   height: 4rem;
   width: 2.5rem;
@@ -64,10 +65,19 @@ button:hover {
   transition: transform 0.3s;
 }
 .sidebar__toggle:hover,
-.sidebar__toggle:focus {
+.sidebar__toggle:focus,
+button:active {
   background: var(--color-primary);
+  color: var(--color-text-inverse);
 }
 
 .button--closed {
   transform: translateX(4rem);
+}
+
+.sidebar__item--active {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+
+  font-weight: 600;
 }

@@ -1,17 +1,30 @@
-<div class="sidebar" [class.sidebar--closed]="!sidebarVisible">
-  <button>
-    <img src="assets/user_icon.svg" alt="" width="24" height="24" />
-    <span>Users</span>
+<aside class="sidebar" [class.sidebar--closed]="!sidebarVisible">
+  <button
+    routerLink="/stations"
+    [class.sidebar__item--active]="selected === 'station'"
+    (click)="selected = 'station'"
+  >
+    <img src="assets/user_icon.svg" width="24" height="24" />
+    <span>Station</span>
   </button>
-  <button>
+
+  <button
+    routerLink="/departments"
+    [class.sidebar__item--active]="selected === 'department'"
+    (click)="selected = 'department'"
+  >
     <img src="assets/user_icon.svg" alt="" width="24" height="24" />
     <span>Departments</span>
   </button>
-  <button>
+  <button
+    routerLink="/stations"
+    [class.sidebar__item--active]="selected === 'users'"
+    (click)="selected = 'users'"
+  >
     <img src="assets/user_icon.svg" alt="" width="24" height="24" />
-    <span>Station</span>
+    <span>Users</span>
   </button>
-</div>
+</aside>
 <button class="sidebar__toggle" [class.button--closed]="!sidebarVisible" (click)="toggleSidebar()">
   {{ sidebarVisible ? '<' : '>' }}
 </button>

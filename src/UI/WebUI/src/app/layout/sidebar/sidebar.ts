@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class Sidebar {
   sidebarVisible: boolean = true;
-
+  selected: string = '';
   toggleSidebar(): void {
     this.sidebarVisible = !this.sidebarVisible;
   }
