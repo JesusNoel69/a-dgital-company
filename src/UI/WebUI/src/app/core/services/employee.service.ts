@@ -12,6 +12,9 @@ export class EmployeeService {
   getById(id: number): Observable<Employee> {
     return this.client.get<Employee>(`${URL}api/Employees/${id}`);
   }
+  getAll() {
+    return this.client.get<Employee>(`${URL}api/Employees`);
+  }
   getCurrentEmployee() {}
   updateProfile() {}
 }

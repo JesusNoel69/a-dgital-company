@@ -16,7 +16,7 @@
       } @else {
         <app-spinner [size]="48" />
       }
-      @if (!user()) {
+      @if (user()) {
         <h2>{{ user()?.clockNumber }}</h2>
         <h3 class="card__employee">{{ user()?.name }} {{ user()?.lastName }}</h3>
       } @else {

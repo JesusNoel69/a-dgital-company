@@ -3,7 +3,9 @@
     <img src="assets/logo.svg" class="navbar__logo" />
     <hr class="navbar__divider" />
     <h2 class="navbar__title">
-      <button class="navbar__title" routerLink="">ADigitalCompany</button>
+      <button class="navbar__title" routerLink="" (click)="navigation.sectionSelected = ''">
+        ADigitalCompany
+      </button>
     </h2>
     <div class="navbar__spacer"></div>
   </div>
@@ -23,7 +25,12 @@
       <div class="profile__menu">
         <button (click)="showMenu.set(false)" disabled>⚙ Configuration</button>
         <button (click)="showMenu.set(false)" disabled>🌙 Dark mode</button>
-        <button (click)="showMenu.set(false)" routerLink="dashboard/badge">🪪 Badge</button>
+        <button
+          (click)="showMenu.set(false); navigation.sectionSelected = ''"
+          routerLink="dashboard/badge"
+        >
+          🪪 Badge
+        </button>
         <hr />
         <button (click)="showMenu.set(false)" disbaled>🚪 Logout</button>
       </div>

@@ -1,0 +1,43 @@
+.employees__container {
+  width: calc(100% - 1.5rem);
+  height: calc(100% - 2rem);
+  margin: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.employees__title {
+  font-size: large;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.employees__add-button {
+  background: var(--color-success);
+  color: var(--color-text-inverse);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.employees__header {
+  background: var(--color-secondary);
+  min-height: 2rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 0.5rem 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+employee-pagination {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+employee-table {
+  height: calc(100% - 9rem);
+}

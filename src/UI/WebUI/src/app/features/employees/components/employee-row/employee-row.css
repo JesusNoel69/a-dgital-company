@@ -1,0 +1,50 @@
+.checkbox {
+  width: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  justify-self: center;
+}
+
+.employees__row {
+  display: grid;
+  grid-template-columns: 40px 2fr repeat(3, 1fr) 45px;
+  padding: 0.3rem;
+  min-height: 2.5rem;
+  gap: calc(0.3rem + 20px);
+  overflow: auto;
+}
+
+.cell {
+  align-self: center;
+  margin-left: 0.7rem;
+}
+
+.employees__user_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-overlay {
+  position: fixed;
+  background: gray;
+  right: 50px;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.employees__action {
+  align-self: center;
+  text-align: center;
+  justify-self: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 20px;
+}

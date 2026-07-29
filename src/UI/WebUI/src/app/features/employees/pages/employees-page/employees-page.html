@@ -1,0 +1,29 @@
+<!--
++--------------------------------------------------------------+
+| Employees                                    + Add Employee  |
+|--------------------------------------------------------------|
+| 🔍 Search...   Department ▼   Status ▼                     |
+|--------------------------------------------------------------|
+| ☑ | Employee           | Department | Position | Status | ⋮ |
+|--------------------------------------------------------------|
+| □ | 👤 John Doe        | IT         | Backend  | 🟢     | ⋮ |
+|   | john@company.com   |            |          |        |   |
+|--------------------------------------------------------------|
+| □ | 👤 Jane Smith      | HR         | Manager  | 🟢     | ⋮ |
+|   | jane@company.com   |            |          |        |   |
+|--------------------------------------------------------------|
+| Showing 1-20 of 150                             < 1 2 3 >    |
++--------------------------------------------------------------+
+-->
+
+<div class="employees__container">
+  <div class="employees__header">
+    <h1 class="employees__title">Employees</h1>
+    <button class="employees__add-button">+ Add Employee</button>
+  </div>
+  <hr />
+  <employee-filters />
+  <hr />
+  <employee-table />
+  <employee-pagination />
+</div>

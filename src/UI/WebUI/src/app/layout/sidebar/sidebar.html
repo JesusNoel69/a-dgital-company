@@ -1,28 +1,28 @@
 <aside class="sidebar" [class.sidebar--closed]="!sidebarVisible">
   <button
-    routerLink="/stations"
-    [class.sidebar__item--active]="selected === 'station'"
-    (click)="selected = 'station'"
+    routerLink="dashboard/stations"
+    [class.sidebar__item--active]="navigation.sectionSelected === 'station'"
+    (click)="navigation.sectionSelected = 'station'"
   >
     <img src="assets/user_icon.svg" width="24" height="24" />
-    <span>Station</span>
+    <span>Stations</span>
   </button>
 
   <button
-    routerLink="/departments"
-    [class.sidebar__item--active]="selected === 'department'"
-    (click)="selected = 'department'"
+    routerLink="dahsboard/departments"
+    [class.sidebar__item--active]="navigation.sectionSelected === 'department'"
+    (click)="navigation.sectionSelected = 'department'"
   >
     <img src="assets/user_icon.svg" alt="" width="24" height="24" />
     <span>Departments</span>
   </button>
   <button
-    routerLink="/stations"
-    [class.sidebar__item--active]="selected === 'users'"
-    (click)="selected = 'users'"
+    routerLink="dashboard/employees"
+    [class.sidebar__item--active]="navigation.sectionSelected === 'users'"
+    (click)="navigation.sectionSelected = 'users'"
   >
     <img src="assets/user_icon.svg" alt="" width="24" height="24" />
-    <span>Users</span>
+    <span>Employees</span>
   </button>
 </aside>
 <button class="sidebar__toggle" [class.button--closed]="!sidebarVisible" (click)="toggleSidebar()">

@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family:
@@ -36,4 +37,6 @@
   --color-hover: #d9d9d9;
   /* Shadow */
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  --color-success: rgb(57, 184, 57);
 }

@@ -39,7 +39,7 @@ button:hover {
 }
 
 .sidebar--closed {
-  width: 4rem;
+  width: calc(4rem + 4px);
 }
 
 .sidebar--closed button span {
@@ -58,7 +58,7 @@ button:hover {
   align-items: center;
   display: flex;
   border-radius: 0 7rem 7rem 0;
-  transform: translateX(15rem);
+  transform: translateX(calc(15rem - 4px));
   border-right: 4px steelblue solid;
   border-top: 4px steelblue solid;
   border-bottom: 4px steelblue solid;

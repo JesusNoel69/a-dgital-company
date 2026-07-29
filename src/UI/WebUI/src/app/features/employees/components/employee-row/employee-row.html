@@ -1,0 +1,17 @@
+<div class="employees__row">
+  <input type="checkbox" class="checkbox" />
+  <div class="employees__user_info"><span>👤 John Doe</span> <span>email</span></div>
+  <div class="cell">IT</div>
+  <div class="cell">Backend</div>
+  <div class="cell">🟢</div>
+  @if (isModalOpen) {
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <button>Details</button>
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    </div>
+  }
+  <button class="employees__action" (click)="toggleModal($event)" #modal>⋮</button>
+</div>

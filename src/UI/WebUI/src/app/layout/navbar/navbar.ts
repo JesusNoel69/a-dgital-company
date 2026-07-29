@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { NavigationService } from '../../core/services/navigation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.css',
 })
 export class Navbar {
+  constructor(public navigation: NavigationService) {}
   readonly showMenu = signal(false);
 
   toggleMenu() {
