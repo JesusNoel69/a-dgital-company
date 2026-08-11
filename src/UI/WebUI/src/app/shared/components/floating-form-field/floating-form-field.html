@@ -1,0 +1,24 @@
+@if (type !== 'select') {
+  <div class="form-field" [class]="type == 'date' ? 'form-field--date' : ''" [formGroup]="form">
+    <input
+      [id]="id"
+      [type]="type"
+      [formControlName]="controlName"
+      [placeholder]="type !== 'date' && type !== 'number' ? ' ' : ''"
+    />
+
+    <label [for]="id">{{ label }}</label>
+  </div>
+} @else {
+  <div class="form-field form-field--date" [formGroup]="form">
+    <label [for]="id">{{ label }}</label>
+
+    <select [id]="id" [formControlName]="controlName">
+      @for (option of options; track option[optionValue]) {
+        <option [ngValue]="option[optionValue]">
+          {{ option[optionLabel] }}
+        </option>
+      }
+    </select>
+  </div>
+}

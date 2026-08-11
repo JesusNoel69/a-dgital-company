@@ -1,0 +1,88 @@
+@if (modalOpened) {
+  <div class="modal-container" (click)="closeModal()">
+    <dialog [open]="modalOpened" class="modal" (click)="$event.stopPropagation()" focus>
+      <div class="modal__header">
+        <h1>Add employee</h1>
+        <button (click)="closeModal()">X</button>
+      </div>
+
+      <form class="modal__content" [formGroup]="employeeForm">
+        <floating-form-field
+          [form]="employeeForm"
+          id="email"
+          label="Email"
+          type="email"
+          controlName="email"
+        />
+        <floating-form-field
+          [form]="employeeForm"
+          id="clockNumber"
+          label="Clock Number"
+          controlName="clockNumber"
+        />
+
+        <floating-form-field
+          [form]="employeeForm"
+          id="firstName"
+          label="First Name"
+          controlName="firstName"
+        />
+
+        <floating-form-field
+          [form]="employeeForm"
+          id="lastName"
+          label="Last Name"
+          controlName="lastName"
+        />
+
+        <floating-form-field [form]="employeeForm" id="rfc" label="RFC" controlName="rfc" />
+
+        <floating-form-field
+          [form]="employeeForm"
+          id="socialNumber"
+          label="Social Number"
+          controlName="socialNumber"
+        />
+
+        <floating-form-field
+          [form]="employeeForm"
+          id="hireDate"
+          label="Hire Date"
+          type="date"
+          controlName="hireDate"
+        />
+
+        <floating-form-field
+          [form]="employeeForm"
+          id="salary"
+          label="Salary"
+          type="number"
+          controlName="salary"
+        />
+
+        <floating-form-field
+          [form]="employeeForm"
+          id="department"
+          label="Department"
+          type="select"
+          controlName="departmentId"
+          [options]="departments()"
+          optionLabel="name"
+          optionValue="id"
+        />
+
+        <floating-form-field
+          [form]="employeeForm"
+          id="jobPosition"
+          label="Job Position"
+          type="select"
+          controlName="jobPosition"
+          [options]="jobPositions()"
+          optionLabel="label"
+          optionValue="value"
+        />
+        <button id="add-employee" (click)="addEmployee()">Add</button>
+      </form>
+    </dialog>
+  </div>
+}

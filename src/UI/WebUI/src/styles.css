@@ -32,11 +32,15 @@
   --color-text: #1b1b1b;
   --color-text-inverse: #f5f5f5;
   /* Border */
-  --color-border: #e5e5e5;
+  --color-border: #bdbdbd;
   /* Hover */
   --color-hover: #d9d9d9;
   /* Shadow */
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-
+  /* Placeholder */
+  --color-placeholder: #666;
   --color-success: rgb(57, 184, 57);
+}
+button {
+  cursor: pointer;
 }

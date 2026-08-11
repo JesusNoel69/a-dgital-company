@@ -17,9 +17,14 @@
 -->
 
 <div class="employees__container">
+  <employees-add-modal
+    (employeeCreated)="loadEmployees()"
+    [modalOpened]="this.modalOpened"
+    (close)="closeModal()"
+  />
   <div class="employees__header">
     <h1 class="employees__title">Employees</h1>
-    <button class="employees__add-button">+ Add Employee</button>
+    <button class="employees__add-button" (click)="showModal()">+ Add Employee</button>
   </div>
   <hr />
   <employee-filters />

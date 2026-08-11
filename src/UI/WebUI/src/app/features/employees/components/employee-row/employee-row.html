@@ -1,17 +1,26 @@
 <div class="employees__row">
   <input type="checkbox" class="checkbox" />
-  <div class="employees__user_info"><span>👤 John Doe</span> <span>email</span></div>
+
+  <div class="employees__user_info">
+    <span>👤 {{ employee.name }}</span>
+    <span>{{ employee.email }}</span>
+  </div>
+
   <div class="cell">IT</div>
-  <div class="cell">Backend</div>
+  <div class="cell">{{ employee.clockNumber }}</div>
   <div class="cell">🟢</div>
-  @if (isModalOpen) {
-    <div class="modal-overlay">
-      <div class="modal-content">
-        <button>Details</button>
-        <button>Edit</button>
-        <button>Delete</button>
+
+  <div class="employees__actions">
+    <button class="employees__action" type="button" (click)="toggleModal($event)">⋮</button>
+
+    @if (isModalOpen) {
+      <div class="modal-overlay" (click)="closeModal()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+          <button type="button">Details</button>
+          <button type="button">Edit</button>
+          <button type="button">Delete</button>
+        </div>
       </div>
-    </div>
-  }
-  <button class="employees__action" (click)="toggleModal($event)" #modal>⋮</button>
+    }
+  </div>
 </div>

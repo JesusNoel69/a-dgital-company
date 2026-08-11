@@ -13,6 +13,8 @@
     <div>Action</div>
   </div>
   <hr class="separator sticky_separator" />
-  <employee-row />
+  @for (employee of employees(); track employee.clockNumber) {
+    <employee-row [employee]="employee"></employee-row>
+  }
   <hr class="separator" />
 </div>

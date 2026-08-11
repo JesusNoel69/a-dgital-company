@@ -81,7 +81,7 @@ button {
   border-radius: 8px;
   box-shadow: var(--shadow-md);
   overflow: hidden;
-  z-index: 100;
+  z-index: 999999;
 }
 
 .profile__menu button {

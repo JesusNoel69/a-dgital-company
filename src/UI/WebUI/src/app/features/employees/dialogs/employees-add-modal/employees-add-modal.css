@@ -1,0 +1,105 @@
+.modal-container {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+}
+
+.modal {
+  background: var(--color-background);
+  border-radius: 0.5rem;
+}
+
+.modal {
+  width: 50rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  border-radius: 0.5rem;
+  background: var(--color-background);
+  box-shadow: var(--shadow-md);
+}
+
+.modal__content {
+  width: 50rem;
+  height: max-content;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.modal__header {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  background: var(--color-primary);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__header h1 {
+  color: var(--color-background);
+}
+
+.modal__header button {
+  position: fixed;
+  background: red;
+  border: none;
+  border-radius: 0 0.4rem 0 0;
+  height: 2rem;
+  width: 2rem;
+  right: 0;
+}
+
+#firstName,
+#lastName,
+#rfc,
+#socialNumber {
+  grid-column: span 6;
+}
+
+#email,
+#jobPosition {
+  grid-column: span 8;
+}
+
+#hireDate,
+#clockNumber,
+#salary,
+#department {
+  grid-column: span 4;
+}
+
+#add-employee {
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--color-success);
+  color: var(--color-background);
+  height: 3rem;
+  grid-column: span 4;
+}
+
+@media screen and (width<65rem) {
+  .modal {
+    width: 25rem;
+  }
+  .modal__content {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+  }
+}

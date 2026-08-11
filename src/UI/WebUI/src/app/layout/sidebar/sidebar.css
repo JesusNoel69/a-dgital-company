@@ -47,7 +47,7 @@ button:hover {
 }
 
 .sidebar__toggle {
-  z-index: 999;
+  z-index: 9999999;
   position: fixed;
   height: 4rem;
   width: 2.5rem;
