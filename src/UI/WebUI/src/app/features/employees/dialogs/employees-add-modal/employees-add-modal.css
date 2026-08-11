@@ -85,12 +85,21 @@
 }
 
 #add-employee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 0.5rem;
   background: var(--color-success);
   color: var(--color-background);
   height: 3rem;
   grid-column: span 4;
+}
+
+#add-employee:disabled {
+  background: var(--color-success-disabled);
+  color: var(--color-placeholder);
+  cursor: auto;
 }
 
 @media screen and (width<65rem) {

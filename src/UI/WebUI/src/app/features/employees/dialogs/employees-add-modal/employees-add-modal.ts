@@ -8,17 +8,20 @@ import { DepartmentService } from '../../../../core/services/department.service'
 import { FloatingFormField } from '../../../../shared/components/floating-form-field/floating-form-field';
 import { EmployeeService } from '../../../../core/services/employee.service';
 import { DEFAULT_PASSWORD } from '../../../../core/constants/pass';
+import { email } from '@angular/forms/signals';
+import { Spinner } from '../../../../shared/components/spinner/spinner';
 
 @Component({
   selector: 'employees-add-modal',
-  imports: [ReactiveFormsModule, FloatingFormField],
+  imports: [ReactiveFormsModule, FloatingFormField, Spinner],
   templateUrl: './employees-add-modal.html',
   styleUrl: './employees-add-modal.css',
 })
 export class EmployeesAddModal {
   @Input() modalOpened!: boolean;
   @Output() close = new EventEmitter<void>();
-  @Output() employeeCreated = new EventEmitter<number>();
+  //@Output() employeeCreated = new EventEmitter<number>();
+  buttonAddDisabled = signal(false);
   departments = signal<DepartmentDto[]>([]);
   jobPositions = signal<JobPositionOption[]>([]);
   employeeForm!: FormGroup;
@@ -63,6 +66,7 @@ export class EmployeesAddModal {
   }
 
   addEmployee(): void {
+    this.buttonAddDisabled.set(true);
     if (this.employeeForm.invalid) {
       this.employeeForm.markAllAsTouched();
       return;
@@ -72,7 +76,7 @@ export class EmployeesAddModal {
 
     const employee = new CreateUserRequest(
       form.email,
-      form.email,
+      form.fistName + ' ' + form.lastName,
       DEFAULT_PASSWORD,
       form.firstName,
       form.lastName,
@@ -84,16 +88,22 @@ export class EmployeesAddModal {
       form.jobPosition,
       form.salary,
     );
-    console.log('Employee:', employee);
-    console.log('JSON:', JSON.stringify(employee, null, 2));
     this.employeeService.addEmployee(employee).subscribe({
       next: (id) => {
-        this.employeeCreated.emit(id);
+        this.employeeService.notifyEmployeeCreated(id);
+        //this.employeeCreated.emit(id);
 
         this.employeeForm.reset({
           jobPosition: JobPosition.Unassigned,
           departmentId: null,
           salary: null,
+          email: null,
+          rfc: null,
+          hireDate: Date(),
+          clockNumber: null,
+          socialNumber: null,
+          firstName: null,
+          lastName: null,
         });
         this.closeModal();
       },
@@ -102,6 +112,7 @@ export class EmployeesAddModal {
         console.error('Backend validation:', error.error);
       },
     });
+    this.buttonAddDisabled.set(false);
   }
 
   showModal(): void {

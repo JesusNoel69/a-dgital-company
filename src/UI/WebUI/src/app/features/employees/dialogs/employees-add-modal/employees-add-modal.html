@@ -81,7 +81,13 @@
           optionLabel="label"
           optionValue="value"
         />
-        <button id="add-employee" (click)="addEmployee()">Add</button>
+        <button id="add-employee" [disabled]="buttonAddDisabled()" (click)="addEmployee()">
+          @if (buttonAddDisabled()) {
+            <app-spinner />
+          } @else {
+            <span>Add</span>
+          }
+        </button>
       </form>
     </dialog>
   </div>

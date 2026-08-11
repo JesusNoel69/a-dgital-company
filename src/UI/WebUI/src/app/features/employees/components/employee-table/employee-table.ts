@@ -12,10 +12,20 @@ import { EmployeeService } from '../../../../core/services/employee.service';
 })
 export class EmployeeTable implements OnInit {
   employees = signal<Employee[]>([]);
+  rowColor: boolean = false;
+
+  changeRowColor(): boolean {
+    this.rowColor = !this.rowColor;
+    return this.rowColor;
+  }
 
   constructor(private employeeService: EmployeeService) {}
   ngOnInit(): void {
     this.loadEmployees();
+
+    this.employeeService.employeeCreated$.subscribe(() => {
+      this.loadEmployees();
+    });
   }
 
   loadEmployees(): void {

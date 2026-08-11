@@ -40,6 +40,7 @@
   /* Placeholder */
   --color-placeholder: #666;
   --color-success: rgb(57, 184, 57);
+  --color-success-disabled: rgb(122, 210, 122);
 }
 button {
   cursor: pointer;

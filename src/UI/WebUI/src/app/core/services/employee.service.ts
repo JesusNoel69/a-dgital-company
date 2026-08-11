@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Employee } from '../models/Employee';
 import { URL } from '../constants/api';
 import { CreateUserRequest } from '../models/CreateUserRequest';
@@ -21,6 +21,14 @@ export class EmployeeService {
 
   addEmployee(employee: CreateUserRequest): Observable<number> {
     return this.client.post<number>(`${URL}api/Employees`, employee);
+  }
+
+  private employeeCreatedSubject = new Subject<number>();
+
+  employeeCreated$ = this.employeeCreatedSubject.asObservable();
+
+  notifyEmployeeCreated(id: number): void {
+    this.employeeCreatedSubject.next(id);
   }
 
   getCurrentEmployee() {}

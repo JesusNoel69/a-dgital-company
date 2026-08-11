@@ -42,10 +42,13 @@
 
 .form-field input:focus + label,
 .form-field input.has-value + label {
+  color: steelblue;
+}
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label {
   top: 0;
   transform: translateY(-50%);
   font-size: 0.75rem;
-  color: steelblue;
 }
 
 .form-field input:focus {

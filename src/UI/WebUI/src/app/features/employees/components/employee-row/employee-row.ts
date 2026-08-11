@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Employee } from '../../../../core/models/Employee';
 
 @Component({
@@ -10,6 +10,7 @@ import { Employee } from '../../../../core/models/Employee';
 })
 export class EmployeeRow {
   @Input({ required: true }) employee!: Employee;
+  @Input() rowColor: boolean = false;
   isModalOpen = false;
 
   toggleModal(event: MouseEvent): void {

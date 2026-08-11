@@ -13,10 +13,7 @@ import { EmployeeService } from '../../../../core/services/employee.service';
   styleUrl: './employees-page.css',
 })
 export class EmployeesPage implements OnInit {
-  constructor(
-    private cdr: ChangeDetectorRef,
-    private employeeService: EmployeeService,
-  ) {}
+  constructor(private employeeService: EmployeeService) {}
   employees: Employee[] = [];
   ngOnInit() {
     this.loadEmployees();
@@ -34,7 +31,6 @@ export class EmployeesPage implements OnInit {
     this.employeeService.getAll().subscribe({
       next: (response) => {
         this.employees = response;
-        //this.cdr.detectChanges();
       },
       error: (error) => {
         console.log(error);
