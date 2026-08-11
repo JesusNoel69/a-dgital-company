@@ -1,3 +1,4 @@
+using System.Transactions;
 using ADigitalCompany.Application.Exceptions;
 using ADigitalCompany.Application.Interfaces.Identity;
 using ADigitalCompany.Application.Interfaces.Persistence;
@@ -14,11 +15,14 @@ namespace ADigitalCompany.Application.Features.Employees.Commands.CreateEmployee
             if (await employeeRepository.ExistsEmployeeNumberAsync(request.ClockNumber))
                 throw new BadRequestException("Employee number already exists.");
 
-            var department = await departmentRepository.GetByIdAsync(request.DepartmentId);
+            var departmentExists =
+                await departmentRepository.ExistsByIdAsync(request.DepartmentId);
 
-            if (department is null)
-                throw new NotFoundException(nameof(Department), request.DepartmentId);
-
+            if (!departmentExists){
+                throw new NotFoundException(
+                    nameof(Department),
+                    request.DepartmentId);
+            }
             var user = await userService.CreateUser(new CreateUserRequest
             {
                 Email = request.Email,
@@ -27,7 +31,6 @@ namespace ADigitalCompany.Application.Features.Employees.Commands.CreateEmployee
                 FirstName = request.FirstName,
                 LastName = request.LastName
             });
-
             var employee = new Employee(
                 user.Id,
                 request.ClockNumber,
@@ -35,7 +38,7 @@ namespace ADigitalCompany.Application.Features.Employees.Commands.CreateEmployee
                 request.SocialNumber,
                 request.HireDate,
                 request.JobPosition,
-                department,
+                request.DepartmentId,
                 request.Salary);
 
             await employeeRepository.CreateAsync(employee);

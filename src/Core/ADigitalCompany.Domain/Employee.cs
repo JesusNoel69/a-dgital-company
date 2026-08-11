@@ -12,7 +12,8 @@ namespace ADigitalCompany.Domain
         public string SocialNumber { get; private set; }
         public DateTime HireDate { get; private set; }
         public JobPosition JobPosition { get; private set; }
-        public Department Department { get; private set; }
+        public int DepartmentId { get; private set; }
+        public Department Department { get; private set; } = default!;
         public decimal Salary { get; private set; }
         private Employee(){ }
         public Employee(
@@ -22,7 +23,7 @@ namespace ADigitalCompany.Domain
             string socialNumber, 
             DateTime hireDate, 
             JobPosition jobPosition, 
-            Department department, decimal salary)
+            int departmentId, decimal salary)
         {
             IdentityUserId = identityUserId;
             ClockNumber = clockNumber;
@@ -30,14 +31,15 @@ namespace ADigitalCompany.Domain
             SocialNumber = socialNumber;
             HireDate = hireDate;
             JobPosition = jobPosition;
-            Department = department;
+            DepartmentId = departmentId;
             Salary = salary;
         }
-        public void ChangeDepartment(Department department)
+        public void ChangeDepartment(int departmentId)
         {
-            ArgumentNullException.ThrowIfNull(department);
+            if (departmentId <= 0)
+                throw new ArgumentException("Invalid department.", nameof(departmentId));
 
-            Department = department;
+            DepartmentId = departmentId;
         }
         public void ChangeSalary(decimal salary)
         {

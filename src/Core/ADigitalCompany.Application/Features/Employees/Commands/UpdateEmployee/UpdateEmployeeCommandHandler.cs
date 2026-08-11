@@ -34,7 +34,11 @@ namespace ADigitalCompany.Application.Features.Employees.Commands.UpdateEmployee
 
             var department = await _departmentRepository.GetByIdAsync(request.DepartmentId);
 
-            employee.ChangeDepartment(department);
+            if (department is null){
+                throw new NotFoundException(nameof(Department), request.DepartmentId);
+            }
+            
+            employee.ChangeDepartment(request.DepartmentId);
 
             await _employeeRepository.UpdateAsync(employee);
 

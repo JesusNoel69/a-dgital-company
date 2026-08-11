@@ -6,6 +6,7 @@ namespace ADigitalCompany.Application.Interfaces.Persistence
     {
         Task<Department?> GetByCodeAsync(string code);
         Task<bool> ExistsByCodeAsync(string code);
+        Task<bool> ExistsByIdAsync(int id);
         Task<List<Department>> GetDepartmentsWithoutManagerAsync();
     }
 }

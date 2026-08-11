@@ -14,7 +14,7 @@ namespace ADigitalCompany.Application.Features.Employees.Commands.ChangeDepartme
             var newDepartment = await _departmentRepository.GetByIdAsync(request.NewDepartmentId);
             if(employee != null && newDepartment != null)
             {
-                employee.ChangeDepartment(newDepartment);                
+                employee.ChangeDepartment(newDepartment.Id);                
             }
             return Unit.Value;
         }

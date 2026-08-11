@@ -11,6 +11,10 @@ namespace ADigitalCompany.Persistence.Repositories
         {
             return await _context.Departments.AnyAsync( department => department.Code == code);
         }
+        public async Task<bool> ExistsByIdAsync(int id)
+        {
+            return await _context.Departments.AnyAsync( department => department.Id == id);
+        }
         public async Task<Department?> GetByCodeAsync(string code)
         {
             return await _context.Departments.FirstOrDefaultAsync( department => department.Code == code);

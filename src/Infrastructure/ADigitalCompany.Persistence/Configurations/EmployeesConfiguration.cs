@@ -13,6 +13,9 @@ namespace ADigitalCompany.Persistence.Configurations
 
             builder.HasKey(x => x.Id);
 
+            builder.Property(x => x.DepartmentId)
+                .IsRequired();
+
             builder.Property(x => x.IdentityUserId)
                 .IsRequired()
                 .HasMaxLength(450);
@@ -43,6 +46,7 @@ namespace ADigitalCompany.Persistence.Configurations
 
             builder.HasOne(x => x.Department)
                 .WithMany()
+                .HasForeignKey(x => x.DepartmentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasData(

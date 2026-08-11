@@ -2,6 +2,7 @@ namespace ADigitalCompany.Domain.Enums
 {
     public enum JobPosition
     {
+        Unassigned,
         Operator,
         Technician,
         MaintenanceTechnician,
