@@ -4,6 +4,8 @@ using ADigitalCompany.Application.Features.Employees.Commands.UpdateEmployee;
 using ADigitalCompany.Application.Features.Employees.Queries.GetEmployeById;
 using ADigitalCompany.Application.Features.Employees.Queries.GetEmployees;
 using ADigitalCompany.Application.Features.Employees.Queries.GetEmployeesByDepartment;
+using ADigitalCompany.Application.Features.Employees.Queries.GetEmployeesByRange;
+using ADigitalCompany.Application.Features.Employees.Queries.GetEmployeesNumber;
 using ADigitalCompany.Application.Features.Employees.Queries.GetManagers;
 using ADigitalCompany.Application.Models.Employee;
 using MediatR;
@@ -60,6 +62,18 @@ namespace ADigitalCompany.API.Controllers
         public async Task<ActionResult<IReadOnlyList<EmployeeDto>>> GetManagers()
         {
             return Ok(await _mediator.Send(new GetManagersQuery()));
+        }
+         
+        [HttpGet("count")]
+        public async Task<ActionResult<int>> GetEmployeesCount()
+        {
+            return Ok(await _mediator.Send(new GetEmployeesNumberQuery()));
+        }
+
+        [HttpGet("range")]
+        public async Task<ActionResult<IReadOnlyList<EmployeeDto>>> GetEmployeesByRange(int start, int end)
+        {
+            return Ok(await _mediator.Send(new GetEmployeesByRangeQuery(start, end)));
         }
     }
 }

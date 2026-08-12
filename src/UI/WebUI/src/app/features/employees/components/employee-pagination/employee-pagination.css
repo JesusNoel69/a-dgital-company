@@ -5,3 +5,15 @@
   padding: 1rem;
   justify-content: space-between;
 }
+
+.employees_carousell {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.employees_carousell button {
+  border: none;
+  text-decoration: underline;
+  background: none;
+}

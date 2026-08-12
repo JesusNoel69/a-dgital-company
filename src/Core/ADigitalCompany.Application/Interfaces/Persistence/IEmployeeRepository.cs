@@ -9,6 +9,7 @@ namespace ADigitalCompany.Application.Interfaces.Persistence
         Task<bool> ExistsEmployeeNumberAsync(string employeeNumber);
         Task<List<Employee>> GetByDepartmentAsync(int departmentId);
         Task<List<Employee>> GetManagersAsync();
+        Task<List<Employee>> GetEmployeesByRangeAsync(int start, int end);
         Task<bool> HasEmployeesAsync(int departmentId);
     }
 }

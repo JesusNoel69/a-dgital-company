@@ -1,7 +1,21 @@
 <tfoot class="employees__pagination">
-  <p>Showing <span>1-20</span> of <span>150</span></p>
-  <!--button carousel-->
-  <div>
-    <button><</button> <button>1</button><button>2</button><button>3</button> <button>></button>
+  <p>
+    Showing
+    <span> {{ pagination().start }}-{{ pagination().end }} </span>
+    of
+    <span>
+      {{ numberOfEmployees() }}
+    </span>
+  </p>
+  <div class="employees_carousell">
+    <button (click)="previousPage()">&lt;</button>
+
+    @for (page of pages(); track page) {
+      <button [class.active]="currentPage() === page" (click)="advance(page)">
+        {{ page }}
+      </button>
+    }
+
+    <button (click)="nextPage()">&gt;</button>
   </div>
 </tfoot>

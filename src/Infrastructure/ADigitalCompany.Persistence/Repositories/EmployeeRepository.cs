@@ -27,6 +27,15 @@ namespace ADigitalCompany.Persistence.Repositories
             return await _context.Employees.AsNoTracking().FirstOrDefaultAsync(x=>x.IdentityUserId==identityUserId);
         }
 
+        public async Task<List<Employee>> GetEmployeesByRangeAsync(int start, int end)
+        {
+            int valuesToTake = end-start;
+            return await _context.Employees.AsNoTracking()
+                .Skip(start)
+                .Take(valuesToTake)
+                .ToListAsync();
+        }
+
         public async Task<List<Employee>> GetManagersAsync()
         {
             return await _context.Departments
