@@ -13,6 +13,7 @@
   min-height: 2.5rem;
   gap: calc(0.3rem + 20px);
   overflow: auto;
+  text-overflow: ellipsis;
 }
 
 .cell {

@@ -1,6 +1,8 @@
 <div class="employees__filters">
-  <input placeholder="🔍 Search..." class="employee__search" />
-
+  <div class="employee__search">
+    <button class="search_button" (click)="search()">🔍</button
+    ><input [value]="query" placeholder="Search..." />
+  </div>
   <div class="employees__dropdown-filters">
     <button (click)="changeSort('clockNumber')">
       Clock Number
