@@ -23,6 +23,7 @@
 .employees__user_info {
   display: flex;
   flex-direction: column;
+  padding-left: 1.2rem;
 }
 
 .modal-overlay {
