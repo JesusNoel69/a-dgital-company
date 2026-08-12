@@ -1,3 +1,5 @@
+using ADigitalCompany.Domain.Enums;
+
 namespace ADigitalCompany.Application.Models.Employee
 {
     public class EmployeeDto
@@ -10,5 +12,6 @@ namespace ADigitalCompany.Application.Models.Employee
         public DateTime HireDate { get; set;}
         public string Email {get; set;}
         public string? PhotoUrl {get; set;}
+        public JobPosition? JobPosition { get; set;}
     }
 }

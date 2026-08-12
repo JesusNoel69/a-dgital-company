@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Employee } from '../../../../core/models/Employee';
+import { JobPosition } from '../../../../core/constants/JobPositions';
 
 @Component({
   selector: 'employee-row',
@@ -12,6 +13,7 @@ export class EmployeeRow {
   @Input({ required: true }) employee!: Employee;
   @Input() rowColor: boolean = false;
   isModalOpen = false;
+  protected readonly JobPosition = JobPosition;
 
   toggleModal(event: MouseEvent): void {
     event.stopPropagation();

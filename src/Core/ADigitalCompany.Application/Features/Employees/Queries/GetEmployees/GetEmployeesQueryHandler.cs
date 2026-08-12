@@ -31,7 +31,8 @@ namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployees
                     PhotoUrl = emp.PhotoUrl,
                     Rfc = emp.Rfc,
                     SocialNumber = emp.SocialNumber,
-                    ClockNumber = emp.ClockNumber
+                    ClockNumber = emp.ClockNumber,
+                    JobPosition=emp.JobPosition,
                 })
                 .ToList();
         }

@@ -1,3 +1,5 @@
+import { JobPosition } from '../constants/JobPositions';
+
 export class Employee {
   public name: string = '';
   public lastName: string = '';
@@ -7,4 +9,5 @@ export class Employee {
   public hireDate?: Date | null;
   public email: string = '';
   public photoUrl?: string;
+  public jobPosition?: JobPosition;
 }

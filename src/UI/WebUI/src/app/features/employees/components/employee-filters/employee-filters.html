@@ -1,8 +1,21 @@
 <div class="employees__filters">
   <input placeholder="🔍 Search..." class="employee__search" />
+
   <div class="employees__dropdown-filters">
-    <button>Department ▼</button>
-    <button>Status ▼</button>
+    <button (click)="changeSort('clockNumber')">
+      Clock Number
+      @if (sortField === 'clockNumber') {
+        {{ sortDirection === 'asc' ? '▲' : '▼' }}
+      }
+    </button>
+
+    <button (click)="changeSort('jobPosition')">
+      Position
+      @if (sortField === 'jobPosition') {
+        {{ sortDirection === 'asc' ? '▲' : '▼' }}
+      }
+    </button>
   </div>
+
   <div></div>
 </div>

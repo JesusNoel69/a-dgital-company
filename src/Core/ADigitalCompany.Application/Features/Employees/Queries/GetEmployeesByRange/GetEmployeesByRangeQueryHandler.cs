@@ -28,7 +28,8 @@ namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployeesByR
                     PhotoUrl = emp.PhotoUrl,
                     Rfc = emp.Rfc,
                     SocialNumber = emp.SocialNumber,
-                    ClockNumber = emp.ClockNumber
+                    ClockNumber = emp.ClockNumber,
+                    JobPosition = emp.JobPosition
                 })
                 .ToList();
                 //return _mapper.Map<List<EmployeeDto>>(employees);

@@ -1,12 +1,12 @@
 <div class="employees__row" [style.background]="rowColor ? '' : 'var(--color-hover)'">
-  <input type="checkbox" class="checkbox" />
-
   <div class="employees__user_info">
     <span>👤 {{ employee.name }}</span>
     <span>{{ employee.email }}</span>
   </div>
 
-  <div class="cell">IT</div>
+  <div class="cell">
+    {{ JobPosition[employee.jobPosition ?? 0] }}
+  </div>
   <div class="cell">{{ employee.clockNumber }}</div>
   <div class="cell">🟢</div>
 

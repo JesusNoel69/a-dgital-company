@@ -5,6 +5,7 @@ import { Employee } from '../models/Employee';
 import { URL } from '../constants/api';
 import { CreateUserRequest } from '../models/CreateUserRequest';
 import { PaginationState } from '../interfaces/PaginationState';
+import { EmployeeSort } from '../interfaces/EmployeeSort';
 
 @Injectable({
   providedIn: 'root',
@@ -53,6 +54,13 @@ export class EmployeeService {
     return this.client.get<number>(`${URL}api/Employees/count`);
   }
 
+  private sortSubject = new BehaviorSubject<EmployeeSort | null>(null);
+
+  sort$ = this.sortSubject.asObservable();
+
+  setSort(sort: EmployeeSort): void {
+    this.sortSubject.next(sort);
+  }
   getCurrentEmployee() {}
   updateProfile() {}
 }
