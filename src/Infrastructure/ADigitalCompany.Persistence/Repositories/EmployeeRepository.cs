@@ -22,9 +22,24 @@ namespace ADigitalCompany.Persistence.Repositories
             return await _context.Employees.AsNoTracking().FirstOrDefaultAsync(x=> x.ClockNumber==employeeNumber);
         }
 
+        public async Task<List<Employee>> GetByFieldAsync(string field)
+        {
+            return await _context.Employees.Where(x=> 
+                    EF.Functions.Like(x.ClockNumber, $"%{field}%") ||
+                    EF.Functions.Like(x.JobPosition, $"%{field}%") ||
+                    EF.Functions.Like(x.SocialNumber, $"%{field}%") ||
+                    EF.Functions.Like(x.Rfc, $"%{field}%"))
+                .ToListAsync();
+        }
+
         public async Task<Employee?> GetByIdentityUserIdAsync(string identityUserId)
         {
             return await _context.Employees.AsNoTracking().FirstOrDefaultAsync(x=>x.IdentityUserId==identityUserId);
+        }
+
+        public async Task<List<Employee>> GetByIdentityUserIdsAsync(List<string> Ids)
+        {
+            return await _context.Employees.Where(x=>Ids.Contains(x.IdentityUserId)).ToListAsync();
         }
 
         public async Task<List<Employee>> GetEmployeesByRangeAsync(int start, int end)

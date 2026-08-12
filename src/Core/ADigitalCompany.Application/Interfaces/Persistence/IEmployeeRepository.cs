@@ -11,5 +11,7 @@ namespace ADigitalCompany.Application.Interfaces.Persistence
         Task<List<Employee>> GetManagersAsync();
         Task<List<Employee>> GetEmployeesByRangeAsync(int start, int end);
         Task<bool> HasEmployeesAsync(int departmentId);
+        Task<List<Employee>> GetByFieldAsync(string field);
+        Task<List<Employee>> GetByIdentityUserIdsAsync(List<string> Ids);
     }
 }

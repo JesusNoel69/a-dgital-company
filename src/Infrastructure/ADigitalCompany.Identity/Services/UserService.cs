@@ -7,6 +7,7 @@ using ADigitalCompany.Application.Models.Identity;
 using ADigitalCompany.Identity.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace ADigitalCompany.Identity.Services
 {
@@ -230,6 +231,19 @@ namespace ADigitalCompany.Identity.Services
                 LastName = user.LastName,
                 Roles = [request.Role]
             };
+        }
+
+        public async Task<List<string>> GetUserIdsByField(string field)
+        {
+             return await _userManager.Users
+                .Where(x=>
+                    EF.Functions.Like(x.Email, $"%{field}%") ||
+                    EF.Functions.Like(x.UserName, $"%{field}%") ||
+                    EF.Functions.Like(x.FirstName, $"%{field}%") ||
+                    EF.Functions.Like(x.LastName, $"%{field}%"))
+                .Select(x => x.Id)
+                .ToListAsync();
+
         }
     }
 }
