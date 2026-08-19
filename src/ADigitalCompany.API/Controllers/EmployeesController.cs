@@ -78,7 +78,7 @@ namespace ADigitalCompany.API.Controllers
         }
 
         [HttpGet("field")]
-        public async Task<ActionResult<IReadOnlyList<EmployeeDto>>> GetEmployeesByField([FromBody] string field)
+        public async Task<ActionResult<IReadOnlyList<EmployeeDto>>> GetEmployeesByField([FromQuery] string field)
         {
             return Ok(await _mediator.Send(new GetEmployeesByFieldQuery(field)));
         }

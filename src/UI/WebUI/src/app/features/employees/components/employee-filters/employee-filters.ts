@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from '../../../../core/services/employee.service';
 import { Employee } from '../../../../core/models/Employee';
+import { FormsModule, NgModel } from '@angular/forms';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'employee-filters',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './employee-filters.html',
   styleUrl: './employee-filters.css',
 })
@@ -15,8 +17,30 @@ export class EmployeeFilters {
 
   constructor(private employeeService: EmployeeService) {}
 
-  search() {
-    console.log(this.query);
+  search(): void {
+    const query = this.query.trim();
+
+    if (!query) {
+      this.clearSearch();
+      return;
+    }
+
+    this.employeeService.setSearchQuery(query);
+    this.employeeService.getByField(query);
+  }
+
+  clearSearch(): void {
+    this.query = '';
+
+    this.employeeService.pagination$.pipe(take(1)).subscribe((pagination) => {
+      this.employeeService.getByRange(pagination.start, pagination.end);
+    });
+  }
+
+  onQueryChange(query: string): void {
+    if (!query.trim()) {
+      this.clearSearch();
+    }
   }
 
   changeSort(field: keyof Employee): void {

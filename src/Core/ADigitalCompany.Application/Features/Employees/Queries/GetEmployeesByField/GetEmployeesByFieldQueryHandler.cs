@@ -12,26 +12,47 @@ namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployeesByF
             GetEmployeesByFieldQuery request,
             CancellationToken cancellationToken)
         {
-            var employeesTask =
+           var employeesTask =
                 _repository.GetByFieldAsync(request.Field);
 
-            var userIdsTask =
-                _userService.GetUserIdsByField(request.Field);
+            var usersTask =
+                _userService.GetUsersByField(request.Field);
 
-            await Task.WhenAll(employeesTask, userIdsTask);
+            await Task.WhenAll(employeesTask, usersTask);
 
-            var employeesByFields = await employeesTask;
-            var userIds = await userIdsTask;
+            var employeesByField = await employeesTask;
+            var usersByField = await usersTask;
 
-            var employeesByUserIds =
-                await _repository.GetByIdentityUserIdsAsync(userIds);
-
-            var employees = employeesByFields
-                .Concat(employeesByUserIds)
+                var employees = employeesByField
+                .Concat(
+                    await _repository.GetByIdentityUserIdsAsync(
+                        usersByField.Select(x => x.Id).ToList()
+                    )
+                )
                 .DistinctBy(x => x.Id)
                 .ToList();
+            var result = employees
+                .Select(employee =>
+                {
+                    var user = usersByField
+                        .FirstOrDefault(u => u.Id == employee.IdentityUserId);
 
-            return _mapper.Map<IReadOnlyList<EmployeeDto>>(employees);
+                    return new EmployeeDto
+                    {
+                        Name = user?.FirstName ?? "",
+                        LastName = user?.LastName ?? "",
+                        Email = user?.Email ?? "",
+                        ClockNumber = employee.ClockNumber,
+                        PhotoUrl = employee.PhotoUrl,
+                        Rfc = employee.Rfc,
+                        SocialNumber = employee.SocialNumber,
+                        HireDate = employee.HireDate,
+                        JobPosition = employee.JobPosition,
+                    };
+                })
+                .ToList();
+
+            return result;
         }
     }
 }

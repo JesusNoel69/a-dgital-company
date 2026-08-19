@@ -1,5 +1,6 @@
 using ADigitalCompany.Application.Interfaces.Persistence;
 using ADigitalCompany.Domain;
+using ADigitalCompany.Domain.Enums;
 using ADigitalCompany.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,11 +25,22 @@ namespace ADigitalCompany.Persistence.Repositories
 
         public async Task<List<Employee>> GetByFieldAsync(string field)
         {
-            return await _context.Employees.Where(x=> 
-                    EF.Functions.Like(x.ClockNumber, $"%{field}%") ||
-                    EF.Functions.Like(x.JobPosition, $"%{field}%") ||
-                    EF.Functions.Like(x.SocialNumber, $"%{field}%") ||
-                    EF.Functions.Like(x.Rfc, $"%{field}%"))
+            var pattern = $"%{field}%";
+
+            JobPosition? jobPosition = null;
+
+            if (Enum.TryParse<JobPosition>(field,true, out var parsedJobPosition))
+            {
+                jobPosition = parsedJobPosition;
+            }
+
+            return await _context.Set<Employee>()
+                .Where(e =>
+                    EF.Functions.Like(e.ClockNumber, pattern) ||
+                    EF.Functions.Like(e.SocialNumber, pattern) ||
+                    EF.Functions.Like(e.Rfc, pattern) ||
+                    (jobPosition.HasValue &&
+                    e.JobPosition == jobPosition.Value))
                 .ToListAsync();
         }
 

@@ -13,6 +13,14 @@
   border: none;
 }
 
+.employee__search span {
+  margin-left: 3px;
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--color-primary);
+  align-self: end;
+}
+
 .search_button {
   padding: 0.5rem;
   border-radius: 0.5rem 0 0 0.5rem;
@@ -48,7 +56,7 @@ button {
   cursor: pointer;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
   .employee__search {
     flex: 1 1 100%;
   }

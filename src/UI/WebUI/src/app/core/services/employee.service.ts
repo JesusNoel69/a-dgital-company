@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Employee } from '../models/Employee';
 import { URL } from '../constants/api';
@@ -34,9 +34,20 @@ export class EmployeeService {
     return this.client.get<Employee[]>(`${URL}api/Employees`);
   }
 
-  getByRange(start: number, end: number): Observable<Employee[]> {
-    return this.client.get<Employee[]>(`${URL}api/Employees/range?start=${start}&end=${end}`);
+  getByRange(start: number, end: number): void {
+    this.client.get<Employee[]>(`${URL}api/Employees/range?start=${start}&end=${end}`).subscribe({
+      next: (employees) => {
+        this.employeesSubject.next(employees);
+      },
+      error: (error) => {
+        console.error(error);
+      },
+    });
   }
+
+  /*getByField(field: string): Observable<Employee[]> {
+    return this.client.get<Employee[]>(`${URL}api/Employees/field?field=${field}`);
+  }*/
 
   addEmployee(employee: CreateUserRequest): Observable<number> {
     return this.client.post<number>(`${URL}api/Employees`, employee);
@@ -60,6 +71,22 @@ export class EmployeeService {
 
   setSort(sort: EmployeeSort): void {
     this.sortSubject.next(sort);
+  }
+  searchQuery = signal('');
+  private employeesSubject = new BehaviorSubject<Employee[]>([]);
+  employees$ = this.employeesSubject.asObservable();
+  getByField(query: string): void {
+    this.client.get<Employee[]>(`${URL}api/Employees/field?field=${query}`).subscribe({
+      next: (employees) => {
+        this.employeesSubject.next(employees);
+      },
+      error: (error) => {
+        console.error(error);
+      },
+    });
+  }
+  setSearchQuery(query: string): void {
+    this.searchQuery.set(query);
   }
   getCurrentEmployee() {}
   updateProfile() {}

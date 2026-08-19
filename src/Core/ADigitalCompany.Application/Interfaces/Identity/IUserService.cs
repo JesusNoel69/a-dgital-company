@@ -10,6 +10,6 @@ namespace ADigitalCompany.Application.Interfaces.Identity
         Task<User> UpdateUser(UpdateUserRequest request);
         Task DeleteUser(string userId);
         Task AssignRole(string userId, string role);
-        Task<List<string>> GetUserIdsByField(string field);
+        Task<IReadOnlyList<User>> GetUsersByField(string field);
     }
 }

@@ -1,7 +1,10 @@
 <div class="employees__filters">
   <div class="employee__search">
     <button class="search_button" (click)="search()">🔍</button
-    ><input [value]="query" placeholder="Search..." />
+    ><input [(ngModel)]="query" (ngModelChange)="onQueryChange($event)" placeholder="Search..." />
+    @if (query.trim()) {
+      <span (click)="clearSearch()">clear</span>
+    }
   </div>
   <div class="employees__dropdown-filters">
     <button (click)="changeSort('clockNumber')">

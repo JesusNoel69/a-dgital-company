@@ -233,7 +233,7 @@ namespace ADigitalCompany.Identity.Services
             };
         }
 
-        public async Task<List<string>> GetUserIdsByField(string field)
+        public async Task<IReadOnlyList<User>> GetUsersByField(string field)
         {
              return await _userManager.Users
                 .Where(x=>
@@ -241,9 +241,15 @@ namespace ADigitalCompany.Identity.Services
                     EF.Functions.Like(x.UserName, $"%{field}%") ||
                     EF.Functions.Like(x.FirstName, $"%{field}%") ||
                     EF.Functions.Like(x.LastName, $"%{field}%"))
-                .Select(x => x.Id)
+                .Select(x => new User() 
+                {
+                    Email=x.Email,
+                    FirstName=x.FirstName,
+                    Id=x.Id,
+                    LastName=x.LastName,
+                    UserName=x.UserName,
+                })
                 .ToListAsync();
-
         }
     }
 }

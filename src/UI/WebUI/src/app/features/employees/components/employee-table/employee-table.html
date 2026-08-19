@@ -11,8 +11,8 @@
     <div>Action</div>
   </div>
   <hr class="separator sticky_separator" />
-  @for (employee of employees(); track employee.clockNumber) {
-    <employee-row [rowColor]="changeRowColor()" [employee]="employee"></employee-row>
+  @for (employee of employees(); track employee.clockNumber; let i = $index) {
+    <employee-row [rowColor]="i % 2 === 0" [employee]="employee"></employee-row>
   }
   <hr class="separator" />
 </div>

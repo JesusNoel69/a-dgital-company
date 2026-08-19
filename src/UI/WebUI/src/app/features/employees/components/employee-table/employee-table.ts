@@ -19,13 +19,13 @@ export class EmployeeTable implements OnInit {
     start: 1,
     end: 20,
   };
-  changeRowColor(): boolean {
-    this.rowColor = !this.rowColor;
-    return this.rowColor;
-  }
 
   constructor(private employeeService: EmployeeService) {}
   ngOnInit(): void {
+    this.employeeService.employees$.subscribe((employees) => {
+      this.employees.set(employees);
+    });
+
     this.employeeService.pagination$.subscribe((pagination) => {
       this.currentPagination = pagination;
 
@@ -44,14 +44,7 @@ export class EmployeeTable implements OnInit {
   }
 
   loadEmployees(start: number, end: number): void {
-    this.employeeService.getByRange(start, end).subscribe({
-      next: (response) => {
-        this.employees.set(response);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
+    this.employeeService.getByRange(start, end);
   }
 
   sortEmployees(sort: EmployeeSort): void {
