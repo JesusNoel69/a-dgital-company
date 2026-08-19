@@ -1,11 +1,11 @@
-import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavigationService } from '../../core/services/navigation.service';
+import { PersonalSvg } from '../../shared/components/svg/personal-svg/personal-svg';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [NgStyle, RouterLink],
+  imports: [RouterLink, PersonalSvg],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })

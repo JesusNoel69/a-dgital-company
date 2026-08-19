@@ -14,6 +14,7 @@ import { EmployeeSort } from '../../../../core/interfaces/EmployeeSort';
 })
 export class EmployeeTable implements OnInit {
   employees = signal<Employee[]>([]);
+  openEmployeeId = signal<number | null>(null);
   rowColor: boolean = false;
   private currentPagination: PaginationState = {
     start: 1,
@@ -47,6 +48,10 @@ export class EmployeeTable implements OnInit {
     this.employeeService.getByRange(start, end);
   }
 
+  onEmployeeDeleted(id: number): void {
+    this.employees.update((employees) => employees.filter((employee) => employee.id !== id));
+  }
+
   sortEmployees(sort: EmployeeSort): void {
     const sorted = [...this.employees()].sort((a, b) => {
       const valueA = a[sort.field];
@@ -61,5 +66,13 @@ export class EmployeeTable implements OnInit {
     });
 
     this.employees.set(sorted);
+  }
+
+  openModal(id: number): void {
+    this.openEmployeeId.set(id);
+  }
+
+  closeModal(): void {
+    this.openEmployeeId.set(null);
   }
 }

@@ -21,7 +21,7 @@
     [class.sidebar__item--active]="navigation.sectionSelected === 'users'"
     (click)="navigation.sectionSelected = 'users'"
   >
-    <img src="assets/user_icon.svg" alt="" width="24" height="24" />
+    <personal-svg [width]="'24px'" [height]="'24px'" [color]="'--color-text-inverse'" />
     <span>Employees</span>
   </button>
 </aside>

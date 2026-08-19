@@ -14,11 +14,17 @@
     <button class="employees__action" type="button" (click)="toggleModal($event)">⋮</button>
 
     @if (isModalOpen) {
-      <div class="modal-overlay" (click)="closeModal()">
+      <div class="modal-overlay" (click)="onCloseModal()">
         <div class="modal-content" (click)="$event.stopPropagation()">
-          <button type="button">Details</button>
-          <button type="button">Edit</button>
-          <button type="button">Delete</button>
+          <button type="button" id="employee__details" (click)="showEmployeeDetails()">
+            <info-svg [color]="'--color-action'" />
+          </button>
+          <button type="button" id="employee__edit" (click)="updateEmployee()">
+            <edit-svg [color]="'--color-action'" />
+          </button>
+          <button type="button" id="employee__delete" (click)="deleteEmployee()">
+            <delete-svg [color]="'--color-danger'" />
+          </button>
         </div>
       </div>
     }

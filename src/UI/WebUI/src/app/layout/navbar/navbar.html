@@ -13,7 +13,7 @@
     <button class="navbar__icon">🔔</button>
     <hr class="navbar__divider" />
     <button class="navbar__profile" (click)="toggleMenu()">
-      <img width="24" height="24" src="assets/user_icon.svg" />
+      <user-svg [color]="'--color-text-inverse'" [width]="'24px'" [height]="'24px'" />
       <div class="navbar__user">
         <span>User Name</span>
         <span>email@email.com</span>

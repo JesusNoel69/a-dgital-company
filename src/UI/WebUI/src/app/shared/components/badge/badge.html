@@ -1,7 +1,7 @@
 <main class="main">
   <section class="card card--front" [class.card--front-visible]="changeBand()">
     <button class="card__action" (click)="change()">
-      <img ngSrc="assets/change_icon.svg" alt="Icono" width="24" height="24" />
+      <change-svg [color]="'--color-primary'" />
     </button>
 
     <header class="card__header">
@@ -67,7 +67,7 @@
 
   <section class="card card--back" [class.card--back-visible]="changeBand()">
     <button class="card__action" (click)="change()">
-      <img ngSrc="assets/change_icon.svg" alt="Icono" width="24" height="24" />
+      <change-svg [color]="'--color-primary'" />
     </button>
     <div class="card__content">
       <div class="card__col">
@@ -75,7 +75,7 @@
         <ul class="card__list">
           @for (value of this.ourValues; track $index) {
             <li class="card__list-element">
-              <img ngSrc="assets/change_icon.svg" alt="Icono" width="24" height="24" />
+              <change-svg [color]="'--color-primary'" [width]="'24px'" [height]="'24px'" />
               {{ value }}
             </li>
           }

@@ -12,7 +12,14 @@
   </div>
   <hr class="separator sticky_separator" />
   @for (employee of employees(); track employee.clockNumber; let i = $index) {
-    <employee-row [rowColor]="i % 2 === 0" [employee]="employee"></employee-row>
+    <employee-row
+      [rowColor]="i % 2 === 0"
+      [employee]="employee"
+      [isModalOpen]="openEmployeeId() === employee.id"
+      (openModal)="openModal($event)"
+      (closeModal)="closeModal()"
+      (employeeDeleted)="onEmployeeDeleted($event)"
+    ></employee-row>
   }
   <hr class="separator" />
 </div>

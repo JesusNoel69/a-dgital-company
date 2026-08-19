@@ -1,26 +1,55 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Employee } from '../../../../core/models/Employee';
 import { JobPosition } from '../../../../core/constants/JobPositions';
+import { EmployeeService } from '../../../../core/services/employee.service';
+import { EditSvg } from '../../../../shared/components/svg/edit-svg/edit-svg';
+import { DeleteSvg } from '../../../../shared/components/svg/delete-svg/delete-svg';
+import { InfoSvg } from '../../../../shared/components/svg/info-svg/info-svg';
 
 @Component({
   selector: 'employee-row',
   standalone: true,
-  imports: [],
+  imports: [EditSvg, DeleteSvg, InfoSvg],
   templateUrl: './employee-row.html',
   styleUrl: './employee-row.css',
 })
 export class EmployeeRow {
   @Input({ required: true }) employee!: Employee;
   @Input() rowColor: boolean = false;
-  isModalOpen = false;
-  protected readonly JobPosition = JobPosition;
+  @Output() employeeDeleted = new EventEmitter<number>();
+  @Input() isModalOpen = false;
 
+  @Output() openModal = new EventEmitter<number>();
+  @Output() closeModal = new EventEmitter<void>();
+  protected readonly JobPosition = JobPosition;
+  constructor(private employeeService: EmployeeService) {}
   toggleModal(event: MouseEvent): void {
     event.stopPropagation();
-    this.isModalOpen = !this.isModalOpen;
+
+    if (this.isModalOpen) {
+      this.closeModal.emit();
+    } else {
+      this.openModal.emit(this.employee.id);
+    }
   }
 
-  closeModal(): void {
-    this.isModalOpen = false;
+  onCloseModal(): void {
+    this.closeModal.emit();
+  }
+
+  showEmployeeDetails() {
+    this.onCloseModal();
+  }
+  updateEmployee() {
+    this.onCloseModal();
+  }
+  deleteEmployee() {
+    this.onCloseModal();
+    console.log(this.employee);
+    this.employeeService.deleteEmployee(this.employee.id).subscribe({
+      next: () => {
+        this.employeeDeleted.emit(this.employee.id);
+      },
+    });
   }
 }

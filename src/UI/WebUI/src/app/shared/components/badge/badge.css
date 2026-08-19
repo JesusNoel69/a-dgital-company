@@ -105,6 +105,8 @@ button {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+  width: 24px;
+  height: 24px;
 }
 
 .card__info {

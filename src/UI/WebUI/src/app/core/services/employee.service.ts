@@ -88,6 +88,9 @@ export class EmployeeService {
   setSearchQuery(query: string): void {
     this.searchQuery.set(query);
   }
+  deleteEmployee(id: number): Observable<boolean> {
+    return this.client.delete<boolean>(`${URL}api/Employees/${id}`);
+  }
   getCurrentEmployee() {}
   updateProfile() {}
 }

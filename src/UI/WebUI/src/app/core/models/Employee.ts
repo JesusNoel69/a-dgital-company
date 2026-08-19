@@ -1,6 +1,7 @@
 import { JobPosition } from '../constants/JobPositions';
 
 export class Employee {
+  public id: number = 0;
   public name: string = '';
   public lastName: string = '';
   public rfc: string = '';

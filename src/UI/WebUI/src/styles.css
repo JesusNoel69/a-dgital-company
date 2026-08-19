@@ -39,8 +39,11 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
   /* Placeholder */
   --color-placeholder: #666;
+  /* General */
   --color-success: rgb(57, 184, 57);
   --color-success-disabled: rgb(122, 210, 122);
+  --color-danger: rgb(210, 9, 9);
+  --color-action: rgb(82, 101, 212);
 }
 button {
   cursor: pointer;
