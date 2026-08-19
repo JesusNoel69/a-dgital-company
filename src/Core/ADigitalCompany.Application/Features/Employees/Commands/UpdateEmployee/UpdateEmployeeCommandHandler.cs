@@ -44,6 +44,7 @@ namespace ADigitalCompany.Application.Features.Employees.Commands.UpdateEmployee
 
             return new EmployeeDto()
             {
+                Id=request.Id,
                 ClockNumber=request.ClockNumber,
                 Email=request.Email,
                 HireDate=employee.HireDate,

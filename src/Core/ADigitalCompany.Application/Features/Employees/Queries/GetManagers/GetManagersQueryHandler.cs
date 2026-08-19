@@ -25,6 +25,7 @@ namespace ADigitalCompany.Application.Features.Employees.Queries.GetManagers
 
                 result.Add(new EmployeeDto
                 {
+                    Id=employee.Id,
                     Name = user.FirstName,
                     LastName = user.LastName,
                     Email = user.Email,

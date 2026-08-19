@@ -24,6 +24,7 @@ namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployeesByD
 
                     return new EmployeeDto
                     {
+                        Id=e.Id,
                         Name = user.FirstName,
                         LastName = user.LastName,
                         Email = user.Email,

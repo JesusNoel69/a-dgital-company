@@ -24,6 +24,7 @@ namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployees
                 user => user.Id,
                 (emp, user) => new EmployeeDto
                 {
+                    Id=emp.Id,
                     Name = user?.FirstName,
                     LastName = user.LastName,
                     HireDate = emp.HireDate,

@@ -39,6 +39,7 @@ namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployeesByF
 
                     return new EmployeeDto
                     {
+                        Id=employee.Id,
                         Name = user?.FirstName ?? "",
                         LastName = user?.LastName ?? "",
                         Email = user?.Email ?? "",

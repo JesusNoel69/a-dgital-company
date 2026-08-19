@@ -18,6 +18,7 @@ namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployeById
 
             return new EmployeeDto
                 {
+                    Id = request.Id,
                     Name = user.FirstName,
                     LastName = user.LastName,
                     HireDate = employee.HireDate,

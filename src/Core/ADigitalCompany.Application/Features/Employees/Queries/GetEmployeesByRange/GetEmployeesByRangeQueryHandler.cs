@@ -21,6 +21,7 @@ namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployeesByR
                 user => user.Id,
                 (emp, user) => new EmployeeDto
                 {
+                    Id=emp.Id,
                     Name = user?.FirstName,
                     LastName = user.LastName,
                     HireDate = emp.HireDate,
@@ -32,7 +33,6 @@ namespace ADigitalCompany.Application.Features.Employees.Queries.GetEmployeesByR
                     JobPosition = emp.JobPosition
                 })
                 .ToList();
-                //return _mapper.Map<List<EmployeeDto>>(employees);
         }
     }
 }
