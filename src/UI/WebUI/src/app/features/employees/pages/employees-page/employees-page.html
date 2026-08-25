@@ -2,15 +2,22 @@
   <employees-add-modal
     (employeeCreated)="loadEmployees()"
     [modalOpened]="this.modalOpened"
-    (close)="closeModal()"
+    (close)="closeAddEmployeesModal()"
   />
+  {{ this.modalOpened }}
+  <employees-details-modal
+    [employee]="selectedEmployee"
+    [modal]="this.detailsModalOpened"
+    (close)="closeDetailsModal()"
+  />
+
   <div class="employees__header">
     <h1 class="employees__title">Employees</h1>
-    <button class="employees__add-button" (click)="showModal()">+ Add Employee</button>
+    <button class="employees__add-button" (click)="showModal()">Add Employee</button>
   </div>
   <hr />
   <employee-filters />
   <hr />
-  <employee-table />
+  <employee-table (employeeDetailsRequested)="showEmployeeDetails($event)" />
   <employee-pagination />
 </div>

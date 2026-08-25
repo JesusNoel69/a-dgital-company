@@ -4,7 +4,7 @@
     [class.sidebar__item--active]="navigation.sectionSelected === 'station'"
     (click)="navigation.sectionSelected = 'station'"
   >
-    <img src="assets/user_icon.svg" width="24" height="24" />
+    <station-svg [color]="'--color-text-inverse'" [size]="'24px'" />
     <span>Stations</span>
   </button>
 
@@ -13,7 +13,7 @@
     [class.sidebar__item--active]="navigation.sectionSelected === 'department'"
     (click)="navigation.sectionSelected = 'department'"
   >
-    <img src="assets/user_icon.svg" alt="" width="24" height="24" />
+    <department-svg [color]="'--color-text-inverse'" [size]="'24px'" />
     <span>Departments</span>
   </button>
   <button

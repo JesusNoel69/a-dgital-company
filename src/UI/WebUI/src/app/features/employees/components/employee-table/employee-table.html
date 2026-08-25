@@ -18,6 +18,7 @@
       [isModalOpen]="openEmployeeId() === employee.id"
       (openModal)="openModal($event)"
       (closeModal)="closeModal()"
+      (detailsRequested)="openEmployeeDetails($event)"
       (employeeDeleted)="onEmployeeDeleted($event)"
     ></employee-row>
   }

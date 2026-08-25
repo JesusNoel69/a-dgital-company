@@ -1,10 +1,10 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, signal } from '@angular/core';
 import { EmployeeRow } from '../employee-row/employee-row';
 import { Employee } from '../../../../core/models/Employee';
 import { EmployeeService } from '../../../../core/services/employee.service';
 import { PaginationState } from '../../../../core/interfaces/PaginationState';
 import { EmployeeSort } from '../../../../core/interfaces/EmployeeSort';
-
+import { EmployeesDetailsModal } from '../../dialogs/employees-details-modal/employees-details-modal';
 @Component({
   selector: 'employee-table',
   standalone: true,
@@ -20,6 +20,8 @@ export class EmployeeTable implements OnInit {
     start: 1,
     end: 20,
   };
+  //public selectedEmployee: Employee | null = null;
+  @Output() employeeDetailsRequested = new EventEmitter<Employee>();
 
   constructor(private employeeService: EmployeeService) {}
   ngOnInit(): void {
@@ -66,6 +68,10 @@ export class EmployeeTable implements OnInit {
     });
 
     this.employees.set(sorted);
+  }
+
+  openEmployeeDetails(employee: Employee): void {
+    this.employeeDetailsRequested.emit(employee);
   }
 
   openModal(id: number): void {

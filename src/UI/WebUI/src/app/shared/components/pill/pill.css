@@ -1,0 +1,9 @@
+p {
+  border: solid steelblue 1px;
+  background: steelblue;
+  color: var(--color-surface);
+  padding: 0.5rem;
+  width: 5rem;
+  text-overflow: ellipsis;
+  border-radius: 2rem;
+}

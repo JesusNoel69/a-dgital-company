@@ -21,6 +21,9 @@ export class EmployeeRow {
 
   @Output() openModal = new EventEmitter<number>();
   @Output() closeModal = new EventEmitter<void>();
+  @Output() detailsRequested = new EventEmitter<Employee>();
+  @Output() detailsRequestedClose = new EventEmitter<void>();
+
   protected readonly JobPosition = JobPosition;
   constructor(private employeeService: EmployeeService) {}
   toggleModal(event: MouseEvent): void {
@@ -37,15 +40,16 @@ export class EmployeeRow {
     this.closeModal.emit();
   }
 
-  showEmployeeDetails() {
+  showEmployeeDetails(): void {
+    console.log('here');
     this.onCloseModal();
+    this.detailsRequested.emit(this.employee);
   }
   updateEmployee() {
     this.onCloseModal();
   }
   deleteEmployee() {
     this.onCloseModal();
-    console.log(this.employee);
     this.employeeService.deleteEmployee(this.employee.id).subscribe({
       next: () => {
         this.employeeDeleted.emit(this.employee.id);

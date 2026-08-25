@@ -1,0 +1,51 @@
+@if (modal()) {
+  <div class="modal-container" (click)="closeModal()">
+    <dialog open="true" class="modal" (click)="$event.stopPropagation()" focus>
+      <div class="modal__header">
+        <h1>Add employee</h1>
+        <button (click)="closeModal()">X</button>
+      </div>
+      <main class="modal__content">
+        <section class="modal__content_section" id="user-basic-info">
+          <img
+            src="../../../../../assets/user_image.png"
+            alt="user_default"
+            height="75px"
+            width="75px"
+          />
+          <p>
+            <span>{{ employee?.name }}</span
+            ><span>#{{ employee?.clockNumber }}</span
+            ><span>/{{ employee?.jobPosition }}</span>
+          </p>
+        </section>
+
+        <section class="modal__content_section" id="employment">
+          <h2>Employment</h2>
+          <p><span>Department:</span> IT</p>
+          <p><span>Hire Date:</span> {{ employee?.hireDate }}</p>
+          <p><span>Status:</span> Active</p>
+          <p><span>Manager:</span> John Doe</p>
+        </section>
+        <section class="modal__content_section">
+          <hr />
+          <h2>Roles</h2>
+          <div id="pills-container">
+            @for (role of roles; track $index) {
+              <app-pill [name]="role" />
+            }
+          </div>
+        </section>
+        <section class="modal__content_section" id="contact">
+          <h2>Contact</h2>
+          <p><span>Email:</span></p>
+          <p><span>Phone:</span></p>
+        </section>
+        <div class="modal__content_actions">
+          <button>View Profile</button>
+          <button>Edit profile</button>
+        </div>
+      </main>
+    </dialog>
+  </div>
+}

@@ -115,10 +115,6 @@ export class EmployeesAddModal {
     this.buttonAddDisabled.set(false);
   }
 
-  showModal(): void {
-    this.modalOpened = true;
-  }
-
   closeModal() {
     this.close.emit();
   }
