@@ -1,6 +1,7 @@
 import { Component, EventEmitter, input, Input, OnInit, Output } from '@angular/core';
 import { Pill } from '../../../../shared/components/pill/pill';
 import { Employee } from '../../../../core/models/Employee';
+import { JobPosition } from '../../../../core/constants/JobPositions';
 
 @Component({
   selector: 'employees-details-modal',
@@ -16,6 +17,8 @@ export class EmployeesDetailsModal implements OnInit {
   roles = ['role1', 'role2', 'role3', 'role4', 'role5', 'role6'];
   @Input({ required: true }) employee: Employee | null = null;
   @Output() close = new EventEmitter<void>();
+  readonly JobPosition = JobPosition;
+
   closeModal() {
     this.close.emit();
   }

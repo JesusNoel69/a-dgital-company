@@ -8,7 +8,7 @@
       <main class="modal__content">
         <section class="modal__content_section" id="user-basic-info">
           <img
-            src="../../../../../assets/user_image.png"
+            [src]="employee?.photoUrl ?? '../../../../../assets/user_image.png'"
             alt="user_default"
             height="75px"
             width="75px"
@@ -16,7 +16,7 @@
           <p>
             <span>{{ employee?.name }}</span
             ><span>#{{ employee?.clockNumber }}</span
-            ><span>/{{ employee?.jobPosition }}</span>
+            ><span>/ {{ JobPosition[employee?.jobPosition ?? 0] }}</span>
           </p>
         </section>
 
