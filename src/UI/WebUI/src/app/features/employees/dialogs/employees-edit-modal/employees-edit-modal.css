@@ -98,7 +98,7 @@ section {
   .modal {
     width: 25rem;
   }
-  .modal__content {
+  .modal__content_flex {
     width: 25rem;
     display: flex;
     flex-direction: column;
