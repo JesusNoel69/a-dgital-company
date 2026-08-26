@@ -22,6 +22,7 @@ export class EmployeeTable implements OnInit {
   };
   //public selectedEmployee: Employee | null = null;
   @Output() employeeDetailsRequested = new EventEmitter<Employee>();
+  @Output() employeeUpdateRequested = new EventEmitter<Employee>();
 
   constructor(private employeeService: EmployeeService) {}
   ngOnInit(): void {
@@ -72,6 +73,10 @@ export class EmployeeTable implements OnInit {
 
   openEmployeeDetails(employee: Employee): void {
     this.employeeDetailsRequested.emit(employee);
+  }
+
+  openEmployeeUpdate(employee: Employee): void {
+    this.employeeUpdateRequested.emit(employee);
   }
 
   openModal(id: number): void {

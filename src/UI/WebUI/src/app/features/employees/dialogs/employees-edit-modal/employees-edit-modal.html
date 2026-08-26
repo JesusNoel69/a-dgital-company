@@ -1,0 +1,117 @@
+@if (modal()) {
+  <div class="modal-container" (click)="closeModal()">
+    <dialog open="true" class="modal" (click)="$event.stopPropagation()" focus>
+      <div class="modal__header">
+        <h1>Edit employee</h1>
+        <button (click)="closeModal()">X</button>
+      </div>
+      <form class="modal__content_flex">
+        <section class="modal__content_section_flex">
+          <h2>Personal Information</h2>
+          <div class="section_group">
+            <floating-form-field
+              [form]="employeeForm"
+              id="first-name"
+              label="First Name"
+              type="text"
+              controlName="firstName"
+            />
+            <floating-form-field
+              [form]="employeeForm"
+              id="last-name"
+              label="Last Name"
+              type="text"
+              controlName="lastName"
+            />
+          </div>
+          <floating-form-field
+            [form]="employeeForm"
+            id="email"
+            label="Email"
+            type="email"
+            controlName="email"
+          />
+          <floating-form-field
+            [form]="employeeForm"
+            id="phone"
+            label="Phone Number"
+            type="number"
+            controlName="phone"
+          />
+          <floating-form-field
+            [form]="employeeForm"
+            id="photo"
+            label="Photo Url"
+            type="text"
+            controlName="photoUrl"
+          />
+        </section>
+
+        <section class="modal__content_section">
+          <h2>Employment</h2>
+          <div class="section_group">
+            <floating-form-field
+              [form]="employeeForm"
+              id="department"
+              label="Department"
+              type="select"
+              controlName="departmentId"
+              [options]="departments()"
+              optionLabel="name"
+              optionValue="id"
+            />
+            <floating-form-field
+              [form]="employeeForm"
+              id="job-position"
+              label="Job Position"
+              type="select"
+              controlName="jobPosition"
+              [options]="jobPositions()"
+              optionLabel="label"
+              optionValue="value"
+            />
+          </div>
+          <floating-form-field
+            [form]="employeeForm"
+            id="hire-date"
+            label="Hire Date:"
+            type="text"
+            controlName="hireDate"
+          />
+          <floating-form-field
+            [form]="employeeForm"
+            id="cloc-number"
+            label="Clock Number"
+            type="text"
+            controlName="clockNumber"
+          />
+          <floating-form-field
+            [form]="employeeForm"
+            id="salary"
+            label="Salary"
+            type="number"
+            controlName="salary"
+          />
+        </section>
+        <section class="modal__content_section">
+          <h2>Identification</h2>
+          <floating-form-field
+            [form]="employeeForm"
+            id="rfc"
+            label="R.F.C."
+            type="text"
+            controlName="rfc"
+          />
+
+          <floating-form-field
+            [form]="employeeForm"
+            id="social-number"
+            label="Social Number"
+            type="text"
+            controlName="socialNumber"
+          />
+        </section>
+      </form>
+    </dialog>
+  </div>
+}

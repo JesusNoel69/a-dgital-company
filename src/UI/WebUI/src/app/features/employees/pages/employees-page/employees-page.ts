@@ -6,6 +6,7 @@ import { EmployeesAddModal } from '../../dialogs/employees-add-modal/employees-a
 import { Employee } from '../../../../core/models/Employee';
 import { EmployeeService } from '../../../../core/services/employee.service';
 import { EmployeesDetailsModal } from '../../dialogs/employees-details-modal/employees-details-modal';
+import { EmployeesEditModal } from '../../dialogs/employees-edit-modal/employees-edit-modal';
 
 @Component({
   selector: 'employees-page',
@@ -15,6 +16,7 @@ import { EmployeesDetailsModal } from '../../dialogs/employees-details-modal/emp
     EmployeePagination,
     EmployeesAddModal,
     EmployeesDetailsModal,
+    EmployeesEditModal,
   ],
   templateUrl: './employees-page.html',
   styleUrl: './employees-page.css',
@@ -30,6 +32,7 @@ export class EmployeesPage implements OnInit {
   }
   modalOpened: boolean = false;
   detailsModalOpened: boolean = false;
+  updateModalOpened: boolean = false;
 
   showModal(): void {
     this.modalOpened = true;
@@ -44,8 +47,18 @@ export class EmployeesPage implements OnInit {
     this.detailsModalOpened = true;
   }
 
+  updateEmployee(employee: Employee | null): void {
+    this.selectedEmployee = employee;
+    this.updateModalOpened = true;
+  }
+
   closeDetailsModal(): void {
     this.detailsModalOpened = false;
+    this.selectedEmployee = null;
+  }
+
+  closeUpdateModal(): void {
+    this.updateModalOpened = false;
     this.selectedEmployee = null;
   }
 

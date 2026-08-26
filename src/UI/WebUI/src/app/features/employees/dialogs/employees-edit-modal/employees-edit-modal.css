@@ -1,0 +1,106 @@
+.modal-container {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+}
+
+.modal {
+  background: var(--color-background);
+  border-radius: 0.5rem;
+}
+
+.modal {
+  width: 50rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  border-radius: 0.5rem;
+  background: var(--color-background);
+  box-shadow: var(--shadow-md);
+}
+
+.modal__header {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  background: var(--color-primary);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__header h1 {
+  color: var(--color-background);
+}
+
+.modal__header button {
+  position: fixed;
+  background: red;
+  border: none;
+  border-radius: 0 0.4rem 0 0;
+  height: 2rem;
+  width: 2rem;
+  right: 0;
+}
+
+.modal__content_flex {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  max-height: 40rem;
+  overflow-y: auto;
+}
+
+.modal__content_section_flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#department,
+#job-position,
+#last-name,
+#first-name {
+  width: 50%;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.section_group {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+  gap: 1rem;
+}
+
+.modal__content_actions {
+  grid-column: span 12;
+  grid-row: span 2;
+}
+
+@media screen and (width<65rem) {
+  .modal {
+    width: 25rem;
+  }
+  .modal__content {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+  }
+}

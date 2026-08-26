@@ -4,13 +4,17 @@
     [modalOpened]="this.modalOpened"
     (close)="closeAddEmployeesModal()"
   />
-  {{ this.modalOpened }}
   <employees-details-modal
     [employee]="selectedEmployee"
     [modal]="this.detailsModalOpened"
     (close)="closeDetailsModal()"
   />
 
+  <employees-edit-modal
+    [employee]="selectedEmployee"
+    [modal]="this.updateModalOpened"
+    (close)="closeUpdateModal()"
+  />
   <div class="employees__header">
     <h1 class="employees__title">Employees</h1>
     <button class="employees__add-button" (click)="showModal()">Add Employee</button>
@@ -18,6 +22,9 @@
   <hr />
   <employee-filters />
   <hr />
-  <employee-table (employeeDetailsRequested)="showEmployeeDetails($event)" />
+  <employee-table
+    (employeeDetailsRequested)="showEmployeeDetails($event)"
+    (employeeUpdateRequested)="updateEmployee($event)"
+  />
   <employee-pagination />
 </div>
